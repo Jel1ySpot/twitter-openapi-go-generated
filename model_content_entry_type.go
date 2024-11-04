@@ -19,13 +19,6 @@ import (
 // ContentEntryType the model 'ContentEntryType'
 type ContentEntryType string
 
-// List of ContentEntryType
-const (
-	TIMELINE_TIMELINE_ITEM   ContentEntryType = "TimelineTimelineItem"
-	TIMELINE_TIMELINE_CURSOR ContentEntryType = "TimelineTimelineCursor"
-	TIMELINE_TIMELINE_MODULE ContentEntryType = "TimelineTimelineModule"
-)
-
 // All allowed values of ContentEntryType enum
 var AllowedContentEntryTypeEnumValues = []ContentEntryType{
 	"TimelineTimelineItem",

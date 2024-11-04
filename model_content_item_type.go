@@ -19,16 +19,6 @@ import (
 // ContentItemType the model 'ContentItemType'
 type ContentItemType string
 
-// List of ContentItemType
-const (
-	TIMELINE_TWEET           ContentItemType = "TimelineTweet"
-	TIMELINE_TIMELINE_CURSOR ContentItemType = "TimelineTimelineCursor"
-	TIMELINE_USER            ContentItemType = "TimelineUser"
-	TIMELINE_PROMPT          ContentItemType = "TimelinePrompt"
-	TIMELINE_MESSAGE_PROMPT  ContentItemType = "TimelineMessagePrompt"
-	TIMELINE_COMMUNITY       ContentItemType = "TimelineCommunity"
-)
-
 // All allowed values of ContentItemType enum
 var AllowedContentItemTypeEnumValues = []ContentItemType{
 	"TimelineTweet",
