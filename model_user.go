@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,29 +22,29 @@ var _ MappedNullable = &User{}
 
 // User struct for User
 type User struct {
-	Typename TypeName `json:"__typename"`
-	AffiliatesHighlightedLabel map[string]interface{} `json:"affiliates_highlighted_label"`
-	BusinessAccount map[string]interface{} `json:"business_account,omitempty"`
-	CreatorSubscriptionsCount *int32 `json:"creator_subscriptions_count,omitempty"`
-	HasGraduatedAccess *bool `json:"has_graduated_access,omitempty"`
-	HasHiddenLikesOnProfile *bool `json:"has_hidden_likes_on_profile,omitempty"`
-	HasNftAvatar *bool `json:"has_nft_avatar,omitempty"`
-	HighlightsInfo *UserHighlightsInfo `json:"highlights_info,omitempty"`
-	Id string `json:"id" validate:"regexp=^([A-Za-z0-9+\\/]{4})*([A-Za-z0-9+\\/]{3}=|[A-Za-z0-9+\\/]{2}==)?$"`
-	IsBlueVerified bool `json:"is_blue_verified"`
-	IsProfileTranslatable *bool `json:"is_profile_translatable,omitempty"`
-	Legacy UserLegacy `json:"legacy"`
-	LegacyExtendedProfile *UserLegacyExtendedProfile `json:"legacy_extended_profile,omitempty"`
-	PremiumGiftingEligible *bool `json:"premium_gifting_eligible,omitempty"`
-	Professional *UserProfessional `json:"professional,omitempty"`
-	ProfileImageShape string `json:"profile_image_shape"`
-	RestId string `json:"rest_id" validate:"regexp=^[0-9]+$"`
-	SuperFollowEligible *bool `json:"super_follow_eligible,omitempty"`
-	SuperFollowedBy *bool `json:"super_followed_by,omitempty"`
-	SuperFollowing *bool `json:"super_following,omitempty"`
-	TipjarSettings *UserTipJarSettings `json:"tipjar_settings,omitempty"`
-	UserSeedTweetCount *int32 `json:"user_seed_tweet_count,omitempty"`
-	VerificationInfo *UserVerificationInfo `json:"verification_info,omitempty"`
+	Typename                   TypeName                   `json:"__typename"`
+	AffiliatesHighlightedLabel map[string]interface{}     `json:"affiliates_highlighted_label"`
+	BusinessAccount            map[string]interface{}     `json:"business_account,omitempty"`
+	CreatorSubscriptionsCount  *int32                     `json:"creator_subscriptions_count,omitempty"`
+	HasGraduatedAccess         *bool                      `json:"has_graduated_access,omitempty"`
+	HasHiddenLikesOnProfile    *bool                      `json:"has_hidden_likes_on_profile,omitempty"`
+	HasNftAvatar               *bool                      `json:"has_nft_avatar,omitempty"`
+	HighlightsInfo             *UserHighlightsInfo        `json:"highlights_info,omitempty"`
+	Id                         string                     `json:"id" validate:"regexp=^([A-Za-z0-9+\\/]{4})*([A-Za-z0-9+\\/]{3}=|[A-Za-z0-9+\\/]{2}==)?$"`
+	IsBlueVerified             bool                       `json:"is_blue_verified"`
+	IsProfileTranslatable      *bool                      `json:"is_profile_translatable,omitempty"`
+	Legacy                     UserLegacy                 `json:"legacy"`
+	LegacyExtendedProfile      *UserLegacyExtendedProfile `json:"legacy_extended_profile,omitempty"`
+	PremiumGiftingEligible     *bool                      `json:"premium_gifting_eligible,omitempty"`
+	Professional               *UserProfessional          `json:"professional,omitempty"`
+	ProfileImageShape          string                     `json:"profile_image_shape"`
+	RestId                     string                     `json:"rest_id" validate:"regexp=^[0-9]+$"`
+	SuperFollowEligible        *bool                      `json:"super_follow_eligible,omitempty"`
+	SuperFollowedBy            *bool                      `json:"super_followed_by,omitempty"`
+	SuperFollowing             *bool                      `json:"super_following,omitempty"`
+	TipjarSettings             *UserTipJarSettings        `json:"tipjar_settings,omitempty"`
+	UserSeedTweetCount         *int32                     `json:"user_seed_tweet_count,omitempty"`
+	VerificationInfo           *UserVerificationInfo      `json:"verification_info,omitempty"`
 }
 
 type _User User
@@ -754,7 +754,7 @@ func (o *User) SetVerificationInfo(v UserVerificationInfo) {
 }
 
 func (o User) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -840,10 +840,10 @@ func (o *User) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -899,5 +899,3 @@ func (v *NullableUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

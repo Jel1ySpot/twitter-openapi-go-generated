@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,11 +22,11 @@ var _ MappedNullable = &CoverCta{}
 
 // CoverCta struct for CoverCta
 type CoverCta struct {
-	Text *string `json:"Text,omitempty"`
-	ButtonStyle *string `json:"buttonStyle,omitempty"`
-	Callbacks []Callback `json:"callbacks"`
-	ClientEventInfo CtaClientEventInfo `json:"clientEventInfo"`
-	CtaBehavior TimelineCoverBehavior `json:"ctaBehavior"`
+	Text            *string               `json:"Text,omitempty"`
+	ButtonStyle     *string               `json:"buttonStyle,omitempty"`
+	Callbacks       []Callback            `json:"callbacks"`
+	ClientEventInfo CtaClientEventInfo    `json:"clientEventInfo"`
+	CtaBehavior     TimelineCoverBehavior `json:"ctaBehavior"`
 }
 
 type _CoverCta CoverCta
@@ -188,7 +188,7 @@ func (o *CoverCta) SetCtaBehavior(v TimelineCoverBehavior) {
 }
 
 func (o CoverCta) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -224,10 +224,10 @@ func (o *CoverCta) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -283,5 +283,3 @@ func (v *NullableCoverCta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

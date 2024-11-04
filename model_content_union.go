@@ -13,14 +13,14 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // ContentUnion - struct for ContentUnion
 type ContentUnion struct {
 	TimelineTimelineCursor *TimelineTimelineCursor
-	TimelineTimelineItem *TimelineTimelineItem
+	TimelineTimelineItem   *TimelineTimelineItem
 	TimelineTimelineModule *TimelineTimelineModule
 }
 
@@ -44,7 +44,6 @@ func TimelineTimelineModuleAsContentUnion(v *TimelineTimelineModule) ContentUnio
 		TimelineTimelineModule: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ContentUnion) UnmarshalJSON(data []byte) error {
@@ -133,7 +132,7 @@ func (src ContentUnion) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ContentUnion) GetActualInstance() (interface{}) {
+func (obj *ContentUnion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -188,5 +187,3 @@ func (v *NullableContentUnion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

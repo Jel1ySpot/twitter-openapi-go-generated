@@ -13,14 +13,14 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // SocialContextUnion - struct for SocialContextUnion
 type SocialContextUnion struct {
 	TimelineGeneralContext *TimelineGeneralContext
-	TimelineTopicContext *TimelineTopicContext
+	TimelineTopicContext   *TimelineTopicContext
 }
 
 // TimelineGeneralContextAsSocialContextUnion is a convenience function that returns TimelineGeneralContext wrapped in SocialContextUnion
@@ -36,7 +36,6 @@ func TimelineTopicContextAsSocialContextUnion(v *TimelineTopicContext) SocialCon
 		TimelineTopicContext: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *SocialContextUnion) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src SocialContextUnion) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *SocialContextUnion) GetActualInstance() (interface{}) {
+func (obj *SocialContextUnion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableSocialContextUnion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

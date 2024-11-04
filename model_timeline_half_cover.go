@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,13 +22,13 @@ var _ MappedNullable = &TimelineHalfCover{}
 
 // TimelineHalfCover struct for TimelineHalfCover
 type TimelineHalfCover struct {
-	Dismissible bool `json:"dismissible"`
-	HalfCoverDisplayType string `json:"halfCoverDisplayType"`
-	ImpressionCallbacks []Callback `json:"impressionCallbacks"`
-	PrimaryCoverCta CoverCta `json:"primaryCoverCta"`
-	PrimaryText Text `json:"primaryText"`
-	SecondaryText Text `json:"secondaryText"`
-	Type string `json:"type"`
+	Dismissible          bool       `json:"dismissible"`
+	HalfCoverDisplayType string     `json:"halfCoverDisplayType"`
+	ImpressionCallbacks  []Callback `json:"impressionCallbacks"`
+	PrimaryCoverCta      CoverCta   `json:"primaryCoverCta"`
+	PrimaryText          Text       `json:"primaryText"`
+	SecondaryText        Text       `json:"secondaryText"`
+	Type                 string     `json:"type"`
 }
 
 type _TimelineHalfCover TimelineHalfCover
@@ -226,7 +226,7 @@ func (o *TimelineHalfCover) SetType(v string) {
 }
 
 func (o TimelineHalfCover) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -264,10 +264,10 @@ func (o *TimelineHalfCover) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -323,5 +323,3 @@ func (v *NullableTimelineHalfCover) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

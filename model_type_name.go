@@ -21,30 +21,30 @@ type TypeName string
 
 // List of TypeName
 const (
-	TIMELINE_TWEET TypeName = "TimelineTweet"
-	TIMELINE_TIMELINE_ITEM TypeName = "TimelineTimelineItem"
-	TIMELINE_USER TypeName = "TimelineUser"
-	TIMELINE_TIMELINE_CURSOR TypeName = "TimelineTimelineCursor"
-	TWEET_WITH_VISIBILITY_RESULTS TypeName = "TweetWithVisibilityResults"
-	CONTEXTUAL_TWEET_INTERSTITIAL TypeName = "ContextualTweetInterstitial"
-	TIMELINE_TIMELINE_MODULE TypeName = "TimelineTimelineModule"
-	TWEET_TOMBSTONE TypeName = "TweetTombstone"
-	TIMELINE_PROMPT TypeName = "TimelinePrompt"
-	TIMELINE_MESSAGE_PROMPT TypeName = "TimelineMessagePrompt"
-	TIMELINE_COMMUNITY TypeName = "TimelineCommunity"
-	TWEET_UNAVAILABLE TypeName = "TweetUnavailable"
-	TWEET TypeName = "Tweet"
-	USER TypeName = "User"
-	USER_UNAVAILABLE TypeName = "UserUnavailable"
-	COMMUNITY TypeName = "Community"
-	COMMUNITY_DELETE_ACTION_UNAVAILABLE TypeName = "CommunityDeleteActionUnavailable"
-	COMMUNITY_JOIN_ACTION TypeName = "CommunityJoinAction"
-	COMMUNITY_LEAVE_ACTION_UNAVAILABLE TypeName = "CommunityLeaveActionUnavailable"
-	COMMUNITY_TWEET_PIN_ACTION_UNAVAILABLE TypeName = "CommunityTweetPinActionUnavailable"
+	TIMELINE_TWEET                           TypeName = "TimelineTweet"
+	TIMELINE_TIMELINE_ITEM                   TypeName = "TimelineTimelineItem"
+	TIMELINE_USER                            TypeName = "TimelineUser"
+	TIMELINE_TIMELINE_CURSOR                 TypeName = "TimelineTimelineCursor"
+	TWEET_WITH_VISIBILITY_RESULTS            TypeName = "TweetWithVisibilityResults"
+	CONTEXTUAL_TWEET_INTERSTITIAL            TypeName = "ContextualTweetInterstitial"
+	TIMELINE_TIMELINE_MODULE                 TypeName = "TimelineTimelineModule"
+	TWEET_TOMBSTONE                          TypeName = "TweetTombstone"
+	TIMELINE_PROMPT                          TypeName = "TimelinePrompt"
+	TIMELINE_MESSAGE_PROMPT                  TypeName = "TimelineMessagePrompt"
+	TIMELINE_COMMUNITY                       TypeName = "TimelineCommunity"
+	TWEET_UNAVAILABLE                        TypeName = "TweetUnavailable"
+	TWEET                                    TypeName = "Tweet"
+	USER                                     TypeName = "User"
+	USER_UNAVAILABLE                         TypeName = "UserUnavailable"
+	COMMUNITY                                TypeName = "Community"
+	COMMUNITY_DELETE_ACTION_UNAVAILABLE      TypeName = "CommunityDeleteActionUnavailable"
+	COMMUNITY_JOIN_ACTION                    TypeName = "CommunityJoinAction"
+	COMMUNITY_LEAVE_ACTION_UNAVAILABLE       TypeName = "CommunityLeaveActionUnavailable"
+	COMMUNITY_TWEET_PIN_ACTION_UNAVAILABLE   TypeName = "CommunityTweetPinActionUnavailable"
 	COMMUNITY_TWEET_UNPIN_ACTION_UNAVAILABLE TypeName = "CommunityTweetUnpinActionUnavailable"
-	COMMUNITY_INVITES_UNAVAILABLE TypeName = "CommunityInvitesUnavailable"
-	COMMUNITY_JOIN_REQUESTS_UNAVAILABLE TypeName = "CommunityJoinRequestsUnavailable"
-	API_IMAGE TypeName = "ApiImage"
+	COMMUNITY_INVITES_UNAVAILABLE            TypeName = "CommunityInvitesUnavailable"
+	COMMUNITY_JOIN_REQUESTS_UNAVAILABLE      TypeName = "CommunityJoinRequestsUnavailable"
+	API_IMAGE                                TypeName = "ApiImage"
 )
 
 // All allowed values of TypeName enum
@@ -153,4 +153,3 @@ func (v *NullableTypeName) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

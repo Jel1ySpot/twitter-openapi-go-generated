@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,12 +22,12 @@ var _ MappedNullable = &ErrorExtensions{}
 
 // ErrorExtensions struct for ErrorExtensions
 type ErrorExtensions struct {
-	Code int32 `json:"code"`
-	Kind string `json:"kind"`
-	Name string `json:"name"`
-	RetryAfter *int32 `json:"retry_after,omitempty"`
-	Source string `json:"source"`
-	Tracing Tracing `json:"tracing"`
+	Code       int32   `json:"code"`
+	Kind       string  `json:"kind"`
+	Name       string  `json:"name"`
+	RetryAfter *int32  `json:"retry_after,omitempty"`
+	Source     string  `json:"source"`
+	Tracing    Tracing `json:"tracing"`
 }
 
 type _ErrorExtensions ErrorExtensions
@@ -207,7 +207,7 @@ func (o *ErrorExtensions) SetTracing(v Tracing) {
 }
 
 func (o ErrorExtensions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -244,10 +244,10 @@ func (o *ErrorExtensions) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -303,5 +303,3 @@ func (v *NullableErrorExtensions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

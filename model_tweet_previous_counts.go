@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -24,9 +24,9 @@ var _ MappedNullable = &TweetPreviousCounts{}
 type TweetPreviousCounts struct {
 	BookmarkCount int32 `json:"bookmark_count"`
 	FavoriteCount int32 `json:"favorite_count"`
-	QuoteCount int32 `json:"quote_count"`
-	ReplyCount int32 `json:"reply_count"`
-	RetweetCount int32 `json:"retweet_count"`
+	QuoteCount    int32 `json:"quote_count"`
+	ReplyCount    int32 `json:"reply_count"`
+	RetweetCount  int32 `json:"retweet_count"`
 }
 
 type _TweetPreviousCounts TweetPreviousCounts
@@ -174,7 +174,7 @@ func (o *TweetPreviousCounts) SetRetweetCount(v int32) {
 }
 
 func (o TweetPreviousCounts) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -208,10 +208,10 @@ func (o *TweetPreviousCounts) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -267,5 +267,3 @@ func (v *NullableTweetPreviousCounts) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

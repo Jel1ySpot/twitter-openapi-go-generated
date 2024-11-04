@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,13 +22,13 @@ var _ MappedNullable = &TimelineTimelineCursor{}
 
 // TimelineTimelineCursor struct for TimelineTimelineCursor
 type TimelineTimelineCursor struct {
-	Typename TypeName `json:"__typename"`
-	CursorType CursorType `json:"cursorType"`
-	DisplayTreatment *DisplayTreatment `json:"displayTreatment,omitempty"`
-	EntryType *ContentEntryType `json:"entryType,omitempty"`
-	ItemType *ContentEntryType `json:"itemType,omitempty"`
-	StopOnEmptyResponse *bool `json:"stopOnEmptyResponse,omitempty"`
-	Value string `json:"value"`
+	Typename            TypeName          `json:"__typename"`
+	CursorType          CursorType        `json:"cursorType"`
+	DisplayTreatment    *DisplayTreatment `json:"displayTreatment,omitempty"`
+	EntryType           *ContentEntryType `json:"entryType,omitempty"`
+	ItemType            *ContentEntryType `json:"itemType,omitempty"`
+	StopOnEmptyResponse *bool             `json:"stopOnEmptyResponse,omitempty"`
+	Value               string            `json:"value"`
 }
 
 type _TimelineTimelineCursor TimelineTimelineCursor
@@ -254,7 +254,7 @@ func (o *TimelineTimelineCursor) SetValue(v string) {
 }
 
 func (o TimelineTimelineCursor) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -296,10 +296,10 @@ func (o *TimelineTimelineCursor) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -355,5 +355,3 @@ func (v *NullableTimelineTimelineCursor) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

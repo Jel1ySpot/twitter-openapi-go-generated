@@ -13,19 +13,19 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // InstructionUnion - struct for InstructionUnion
 type InstructionUnion struct {
-	TimelineAddEntries *TimelineAddEntries
-	TimelineAddToModule *TimelineAddToModule
-	TimelineClearCache *TimelineClearCache
-	TimelinePinEntry *TimelinePinEntry
-	TimelineReplaceEntry *TimelineReplaceEntry
-	TimelineShowAlert *TimelineShowAlert
-	TimelineShowCover *TimelineShowCover
+	TimelineAddEntries        *TimelineAddEntries
+	TimelineAddToModule       *TimelineAddToModule
+	TimelineClearCache        *TimelineClearCache
+	TimelinePinEntry          *TimelinePinEntry
+	TimelineReplaceEntry      *TimelineReplaceEntry
+	TimelineShowAlert         *TimelineShowAlert
+	TimelineShowCover         *TimelineShowCover
 	TimelineTerminateTimeline *TimelineTerminateTimeline
 }
 
@@ -84,7 +84,6 @@ func TimelineTerminateTimelineAsInstructionUnion(v *TimelineTerminateTimeline) I
 		TimelineTerminateTimeline: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *InstructionUnion) UnmarshalJSON(data []byte) error {
@@ -283,7 +282,7 @@ func (src InstructionUnion) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *InstructionUnion) GetActualInstance() (interface{}) {
+func (obj *InstructionUnion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -358,5 +357,3 @@ func (v *NullableInstructionUnion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

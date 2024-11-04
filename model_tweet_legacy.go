@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,37 +22,37 @@ var _ MappedNullable = &TweetLegacy{}
 
 // TweetLegacy struct for TweetLegacy
 type TweetLegacy struct {
-	BookmarkCount int32 `json:"bookmark_count"`
-	Bookmarked bool `json:"bookmarked"`
-	ConversationControl map[string]interface{} `json:"conversation_control,omitempty"`
-	ConversationIdStr string `json:"conversation_id_str" validate:"regexp=^[0-9]+$"`
-	CreatedAt string `json:"created_at" validate:"regexp=^(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (0[1-9]|[12][0-9]|3[01]) (0[0-9]|1[0-9]|2[0-3])(: ?)([0-5][0-9])(: ?)([0-5][0-9]) ([+-][0-9]{4}) ([0-9]{4})$"`
-	DisplayTextRange []int32 `json:"display_text_range"`
-	Entities Entities `json:"entities"`
-	ExtendedEntities *ExtendedEntities `json:"extended_entities,omitempty"`
-	FavoriteCount int32 `json:"favorite_count"`
-	Favorited bool `json:"favorited"`
-	FullText string `json:"full_text"`
-	IdStr string `json:"id_str" validate:"regexp=^[0-9]+$"`
-	InReplyToScreenName *string `json:"in_reply_to_screen_name,omitempty"`
-	InReplyToStatusIdStr *string `json:"in_reply_to_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
-	InReplyToUserIdStr *string `json:"in_reply_to_user_id_str,omitempty" validate:"regexp=^[0-9]+$"`
-	IsQuoteStatus bool `json:"is_quote_status"`
-	Lang string `json:"lang"`
-	LimitedActions *string `json:"limited_actions,omitempty"`
-	Place map[string]interface{} `json:"place,omitempty"`
-	PossiblySensitive *bool `json:"possibly_sensitive,omitempty"`
-	PossiblySensitiveEditable *bool `json:"possibly_sensitive_editable,omitempty"`
-	QuoteCount int32 `json:"quote_count"`
-	QuotedStatusIdStr *string `json:"quoted_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
-	QuotedStatusPermalink *QuotedStatusPermalink `json:"quoted_status_permalink,omitempty"`
-	ReplyCount int32 `json:"reply_count"`
-	RetweetCount int32 `json:"retweet_count"`
-	Retweeted bool `json:"retweeted"`
-	RetweetedStatusResult *ItemResult `json:"retweeted_status_result,omitempty"`
-	Scopes *TweetLegacyScopes `json:"scopes,omitempty"`
-	SelfThread *SelfThread `json:"self_thread,omitempty"`
-	UserIdStr string `json:"user_id_str" validate:"regexp=^[0-9]+$"`
+	BookmarkCount             int32                  `json:"bookmark_count"`
+	Bookmarked                bool                   `json:"bookmarked"`
+	ConversationControl       map[string]interface{} `json:"conversation_control,omitempty"`
+	ConversationIdStr         string                 `json:"conversation_id_str" validate:"regexp=^[0-9]+$"`
+	CreatedAt                 string                 `json:"created_at" validate:"regexp=^(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (0[1-9]|[12][0-9]|3[01]) (0[0-9]|1[0-9]|2[0-3])(: ?)([0-5][0-9])(: ?)([0-5][0-9]) ([+-][0-9]{4}) ([0-9]{4})$"`
+	DisplayTextRange          []int32                `json:"display_text_range"`
+	Entities                  Entities               `json:"entities"`
+	ExtendedEntities          *ExtendedEntities      `json:"extended_entities,omitempty"`
+	FavoriteCount             int32                  `json:"favorite_count"`
+	Favorited                 bool                   `json:"favorited"`
+	FullText                  string                 `json:"full_text"`
+	IdStr                     string                 `json:"id_str" validate:"regexp=^[0-9]+$"`
+	InReplyToScreenName       *string                `json:"in_reply_to_screen_name,omitempty"`
+	InReplyToStatusIdStr      *string                `json:"in_reply_to_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
+	InReplyToUserIdStr        *string                `json:"in_reply_to_user_id_str,omitempty" validate:"regexp=^[0-9]+$"`
+	IsQuoteStatus             bool                   `json:"is_quote_status"`
+	Lang                      string                 `json:"lang"`
+	LimitedActions            *string                `json:"limited_actions,omitempty"`
+	Place                     map[string]interface{} `json:"place,omitempty"`
+	PossiblySensitive         *bool                  `json:"possibly_sensitive,omitempty"`
+	PossiblySensitiveEditable *bool                  `json:"possibly_sensitive_editable,omitempty"`
+	QuoteCount                int32                  `json:"quote_count"`
+	QuotedStatusIdStr         *string                `json:"quoted_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
+	QuotedStatusPermalink     *QuotedStatusPermalink `json:"quoted_status_permalink,omitempty"`
+	ReplyCount                int32                  `json:"reply_count"`
+	RetweetCount              int32                  `json:"retweet_count"`
+	Retweeted                 bool                   `json:"retweeted"`
+	RetweetedStatusResult     *ItemResult            `json:"retweeted_status_result,omitempty"`
+	Scopes                    *TweetLegacyScopes     `json:"scopes,omitempty"`
+	SelfThread                *SelfThread            `json:"self_thread,omitempty"`
+	UserIdStr                 string                 `json:"user_id_str" validate:"regexp=^[0-9]+$"`
 }
 
 type _TweetLegacy TweetLegacy
@@ -948,7 +948,7 @@ func (o *TweetLegacy) SetUserIdStr(v string) {
 }
 
 func (o TweetLegacy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1048,10 +1048,10 @@ func (o *TweetLegacy) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1107,5 +1107,3 @@ func (v *NullableTweetLegacy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

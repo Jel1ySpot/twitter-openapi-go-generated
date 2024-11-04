@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,11 +22,11 @@ var _ MappedNullable = &TweetWithVisibilityResults{}
 
 // TweetWithVisibilityResults struct for TweetWithVisibilityResults
 type TweetWithVisibilityResults struct {
-	Typename TypeName `json:"__typename"`
-	LimitedActionResults map[string]interface{} `json:"limitedActionResults,omitempty"`
+	Typename               TypeName                `json:"__typename"`
+	LimitedActionResults   map[string]interface{}  `json:"limitedActionResults,omitempty"`
 	MediaVisibilityResults *MediaVisibilityResults `json:"mediaVisibilityResults,omitempty"`
-	Tweet Tweet `json:"tweet"`
-	TweetInterstitial *TweetInterstitial `json:"tweetInterstitial,omitempty"`
+	Tweet                  Tweet                   `json:"tweet"`
+	TweetInterstitial      *TweetInterstitial      `json:"tweetInterstitial,omitempty"`
 }
 
 type _TweetWithVisibilityResults TweetWithVisibilityResults
@@ -195,7 +195,7 @@ func (o *TweetWithVisibilityResults) SetTweetInterstitial(v TweetInterstitial) {
 }
 
 func (o TweetWithVisibilityResults) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -232,10 +232,10 @@ func (o *TweetWithVisibilityResults) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -291,5 +291,3 @@ func (v *NullableTweetWithVisibilityResults) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

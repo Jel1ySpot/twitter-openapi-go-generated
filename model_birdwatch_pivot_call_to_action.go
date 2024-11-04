@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -23,8 +23,8 @@ var _ MappedNullable = &BirdwatchPivotCallToAction{}
 // BirdwatchPivotCallToAction struct for BirdwatchPivotCallToAction
 type BirdwatchPivotCallToAction struct {
 	DestinationUrl string `json:"destinationUrl"`
-	Prompt string `json:"prompt"`
-	Title string `json:"title"`
+	Prompt         string `json:"prompt"`
+	Title          string `json:"title"`
 }
 
 type _BirdwatchPivotCallToAction BirdwatchPivotCallToAction
@@ -122,7 +122,7 @@ func (o *BirdwatchPivotCallToAction) SetTitle(v string) {
 }
 
 func (o BirdwatchPivotCallToAction) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -152,10 +152,10 @@ func (o *BirdwatchPivotCallToAction) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -211,5 +211,3 @@ func (v *NullableBirdwatchPivotCallToAction) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

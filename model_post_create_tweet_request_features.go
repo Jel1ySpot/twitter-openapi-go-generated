@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,28 +22,28 @@ var _ MappedNullable = &PostCreateTweetRequestFeatures{}
 
 // PostCreateTweetRequestFeatures struct for PostCreateTweetRequestFeatures
 type PostCreateTweetRequestFeatures struct {
-	ArticlesPreviewEnabled bool `json:"articles_preview_enabled"`
-	C9sTweetAnatomyModeratorBadgeEnabled bool `json:"c9s_tweet_anatomy_moderator_badge_enabled"`
-	CommunitiesWebEnableTweetCommunityResultsFetch bool `json:"communities_web_enable_tweet_community_results_fetch"`
-	CreatorSubscriptionsQuoteTweetPreviewEnabled bool `json:"creator_subscriptions_quote_tweet_preview_enabled"`
-	FreedomOfSpeechNotReachFetchEnabled bool `json:"freedom_of_speech_not_reach_fetch_enabled"`
-	GraphqlIsTranslatableRwebTweetIsTranslatableEnabled bool `json:"graphql_is_translatable_rweb_tweet_is_translatable_enabled"`
-	LongformNotetweetsConsumptionEnabled bool `json:"longform_notetweets_consumption_enabled"`
-	LongformNotetweetsInlineMediaEnabled bool `json:"longform_notetweets_inline_media_enabled"`
-	LongformNotetweetsRichTextReadEnabled bool `json:"longform_notetweets_rich_text_read_enabled"`
-	ResponsiveWebEditTweetApiEnabled bool `json:"responsive_web_edit_tweet_api_enabled"`
-	ResponsiveWebEnhanceCardsEnabled bool `json:"responsive_web_enhance_cards_enabled"`
-	ResponsiveWebGraphqlExcludeDirectiveEnabled bool `json:"responsive_web_graphql_exclude_directive_enabled"`
-	ResponsiveWebGraphqlSkipUserProfileImageExtensionsEnabled bool `json:"responsive_web_graphql_skip_user_profile_image_extensions_enabled"`
-	ResponsiveWebGraphqlTimelineNavigationEnabled bool `json:"responsive_web_graphql_timeline_navigation_enabled"`
-	ResponsiveWebTwitterArticleTweetConsumptionEnabled bool `json:"responsive_web_twitter_article_tweet_consumption_enabled"`
-	RwebTipjarConsumptionEnabled bool `json:"rweb_tipjar_consumption_enabled"`
-	RwebVideoTimestampsEnabled bool `json:"rweb_video_timestamps_enabled"`
-	StandardizedNudgesMisinfo bool `json:"standardized_nudges_misinfo"`
-	TweetAwardsWebTippingEnabled bool `json:"tweet_awards_web_tipping_enabled"`
+	ArticlesPreviewEnabled                                         bool `json:"articles_preview_enabled"`
+	C9sTweetAnatomyModeratorBadgeEnabled                           bool `json:"c9s_tweet_anatomy_moderator_badge_enabled"`
+	CommunitiesWebEnableTweetCommunityResultsFetch                 bool `json:"communities_web_enable_tweet_community_results_fetch"`
+	CreatorSubscriptionsQuoteTweetPreviewEnabled                   bool `json:"creator_subscriptions_quote_tweet_preview_enabled"`
+	FreedomOfSpeechNotReachFetchEnabled                            bool `json:"freedom_of_speech_not_reach_fetch_enabled"`
+	GraphqlIsTranslatableRwebTweetIsTranslatableEnabled            bool `json:"graphql_is_translatable_rweb_tweet_is_translatable_enabled"`
+	LongformNotetweetsConsumptionEnabled                           bool `json:"longform_notetweets_consumption_enabled"`
+	LongformNotetweetsInlineMediaEnabled                           bool `json:"longform_notetweets_inline_media_enabled"`
+	LongformNotetweetsRichTextReadEnabled                          bool `json:"longform_notetweets_rich_text_read_enabled"`
+	ResponsiveWebEditTweetApiEnabled                               bool `json:"responsive_web_edit_tweet_api_enabled"`
+	ResponsiveWebEnhanceCardsEnabled                               bool `json:"responsive_web_enhance_cards_enabled"`
+	ResponsiveWebGraphqlExcludeDirectiveEnabled                    bool `json:"responsive_web_graphql_exclude_directive_enabled"`
+	ResponsiveWebGraphqlSkipUserProfileImageExtensionsEnabled      bool `json:"responsive_web_graphql_skip_user_profile_image_extensions_enabled"`
+	ResponsiveWebGraphqlTimelineNavigationEnabled                  bool `json:"responsive_web_graphql_timeline_navigation_enabled"`
+	ResponsiveWebTwitterArticleTweetConsumptionEnabled             bool `json:"responsive_web_twitter_article_tweet_consumption_enabled"`
+	RwebTipjarConsumptionEnabled                                   bool `json:"rweb_tipjar_consumption_enabled"`
+	RwebVideoTimestampsEnabled                                     bool `json:"rweb_video_timestamps_enabled"`
+	StandardizedNudgesMisinfo                                      bool `json:"standardized_nudges_misinfo"`
+	TweetAwardsWebTippingEnabled                                   bool `json:"tweet_awards_web_tipping_enabled"`
 	TweetWithVisibilityResultsPreferGqlLimitedActionsPolicyEnabled bool `json:"tweet_with_visibility_results_prefer_gql_limited_actions_policy_enabled"`
-	VerifiedPhoneLabelEnabled bool `json:"verified_phone_label_enabled"`
-	ViewCountsEverywhereApiEnabled bool `json:"view_counts_everywhere_api_enabled"`
+	VerifiedPhoneLabelEnabled                                      bool `json:"verified_phone_label_enabled"`
+	ViewCountsEverywhereApiEnabled                                 bool `json:"view_counts_everywhere_api_enabled"`
 }
 
 type _PostCreateTweetRequestFeatures PostCreateTweetRequestFeatures
@@ -660,7 +660,7 @@ func (o *PostCreateTweetRequestFeatures) SetViewCountsEverywhereApiEnabled(v boo
 }
 
 func (o PostCreateTweetRequestFeatures) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -728,10 +728,10 @@ func (o *PostCreateTweetRequestFeatures) UnmarshalJSON(data []byte) (err error) 
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -787,5 +787,3 @@ func (v *NullablePostCreateTweetRequestFeatures) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

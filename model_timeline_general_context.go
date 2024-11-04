@@ -20,10 +20,10 @@ var _ MappedNullable = &TimelineGeneralContext{}
 
 // TimelineGeneralContext struct for TimelineGeneralContext
 type TimelineGeneralContext struct {
-	ContextType *string `json:"contextType,omitempty"`
-	LandingUrl *SocialContextLandingUrl `json:"landingUrl,omitempty"`
-	Text *string `json:"text,omitempty"`
-	Type *SocialContextUnionType `json:"type,omitempty"`
+	ContextType *string                  `json:"contextType,omitempty"`
+	LandingUrl  *SocialContextLandingUrl `json:"landingUrl,omitempty"`
+	Text        *string                  `json:"text,omitempty"`
+	Type        *SocialContextUnionType  `json:"type,omitempty"`
 }
 
 // NewTimelineGeneralContext instantiates a new TimelineGeneralContext object
@@ -172,7 +172,7 @@ func (o *TimelineGeneralContext) SetType(v SocialContextUnionType) {
 }
 
 func (o TimelineGeneralContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -231,5 +231,3 @@ func (v *NullableTimelineGeneralContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

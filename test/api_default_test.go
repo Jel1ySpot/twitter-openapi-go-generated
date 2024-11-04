@@ -10,44 +10,44 @@ Testing DefaultAPIService
 package openapi
 
 import (
-	"context"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
-	"testing"
-	openapiclient "github.com/Jel1ySpot/twitter-openapi-go"
+    "context"
+    openapiclient "github.com/Jel1ySpot/twitter-openapi-go-generated"
+    "github.com/stretchr/testify/assert"
+    "github.com/stretchr/testify/require"
+    "testing"
 )
 
 func Test_openapi_DefaultAPIService(t *testing.T) {
 
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
 
-	t.Run("Test DefaultAPIService GetProfileSpotlightsQuery", func(t *testing.T) {
+    t.Run("Test DefaultAPIService GetProfileSpotlightsQuery", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+        t.Skip("skip test") // remove to run test
 
-		var pathQueryId string
+        var pathQueryId string
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetProfileSpotlightsQuery(context.Background(), pathQueryId).Execute()
+        resp, httpRes, err := apiClient.DefaultAPI.GetProfileSpotlightsQuery(context.Background(), pathQueryId).Execute()
 
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
+        require.Nil(t, err)
+        require.NotNil(t, resp)
+        assert.Equal(t, 200, httpRes.StatusCode)
 
-	})
+    })
 
-	t.Run("Test DefaultAPIService GetTweetResultByRestId", func(t *testing.T) {
+    t.Run("Test DefaultAPIService GetTweetResultByRestId", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+        t.Skip("skip test") // remove to run test
 
-		var pathQueryId string
+        var pathQueryId string
 
-		resp, httpRes, err := apiClient.DefaultAPI.GetTweetResultByRestId(context.Background(), pathQueryId).Execute()
+        resp, httpRes, err := apiClient.DefaultAPI.GetTweetResultByRestId(context.Background(), pathQueryId).Execute()
 
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
+        require.Nil(t, err)
+        require.NotNil(t, resp)
+        assert.Equal(t, 200, httpRes.StatusCode)
 
-	})
+    })
 
 }

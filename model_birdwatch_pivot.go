@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,15 +22,15 @@ var _ MappedNullable = &BirdwatchPivot{}
 
 // BirdwatchPivot struct for BirdwatchPivot
 type BirdwatchPivot struct {
-	CallToAction *BirdwatchPivotCallToAction `json:"callToAction,omitempty"`
-	DestinationUrl string `json:"destinationUrl"`
-	Footer BirdwatchPivotFooter `json:"footer"`
-	IconType string `json:"iconType"`
-	Note BirdwatchPivotNote `json:"note"`
-	Shorttitle string `json:"shorttitle"`
-	Subtitle BirdwatchPivotSubtitle `json:"subtitle"`
-	Title string `json:"title"`
-	VisualStyle *string `json:"visualStyle,omitempty"`
+	CallToAction   *BirdwatchPivotCallToAction `json:"callToAction,omitempty"`
+	DestinationUrl string                      `json:"destinationUrl"`
+	Footer         BirdwatchPivotFooter        `json:"footer"`
+	IconType       string                      `json:"iconType"`
+	Note           BirdwatchPivotNote          `json:"note"`
+	Shorttitle     string                      `json:"shorttitle"`
+	Subtitle       BirdwatchPivotSubtitle      `json:"subtitle"`
+	Title          string                      `json:"title"`
+	VisualStyle    *string                     `json:"visualStyle,omitempty"`
 }
 
 type _BirdwatchPivot BirdwatchPivot
@@ -292,7 +292,7 @@ func (o *BirdwatchPivot) SetVisualStyle(v string) {
 }
 
 func (o BirdwatchPivot) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -336,10 +336,10 @@ func (o *BirdwatchPivot) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -395,5 +395,3 @@ func (v *NullableBirdwatchPivot) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

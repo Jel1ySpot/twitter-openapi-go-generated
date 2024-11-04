@@ -20,8 +20,8 @@ var _ MappedNullable = &SocialContextLandingUrl{}
 
 // SocialContextLandingUrl struct for SocialContextLandingUrl
 type SocialContextLandingUrl struct {
-	Url *string `json:"url,omitempty"`
-	UrlType *string `json:"urlType,omitempty"`
+	Url                *string             `json:"url,omitempty"`
+	UrlType            *string             `json:"urlType,omitempty"`
 	UrtEndpointOptions *UrtEndpointOptions `json:"urtEndpointOptions,omitempty"`
 }
 
@@ -139,7 +139,7 @@ func (o *SocialContextLandingUrl) SetUrtEndpointOptions(v UrtEndpointOptions) {
 }
 
 func (o SocialContextLandingUrl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableSocialContextLandingUrl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

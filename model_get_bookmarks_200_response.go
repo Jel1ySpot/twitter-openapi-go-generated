@@ -13,14 +13,14 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetBookmarks200Response - struct for GetBookmarks200Response
 type GetBookmarks200Response struct {
 	BookmarksResponse *BookmarksResponse
-	Errors *Errors
+	Errors            *Errors
 }
 
 // BookmarksResponseAsGetBookmarks200Response is a convenience function that returns BookmarksResponse wrapped in GetBookmarks200Response
@@ -36,7 +36,6 @@ func ErrorsAsGetBookmarks200Response(v *Errors) GetBookmarks200Response {
 		Errors: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetBookmarks200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetBookmarks200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetBookmarks200Response) GetActualInstance() (interface{}) {
+func (obj *GetBookmarks200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetBookmarks200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

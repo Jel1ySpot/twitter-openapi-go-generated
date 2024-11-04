@@ -21,7 +21,7 @@ var _ MappedNullable = &AdditionalMediaInfoCallToActions{}
 // AdditionalMediaInfoCallToActions struct for AdditionalMediaInfoCallToActions
 type AdditionalMediaInfoCallToActions struct {
 	VisitSite *AdditionalMediaInfoCallToActionsUrl `json:"visit_site,omitempty"`
-	WatchNow *AdditionalMediaInfoCallToActionsUrl `json:"watch_now,omitempty"`
+	WatchNow  *AdditionalMediaInfoCallToActionsUrl `json:"watch_now,omitempty"`
 }
 
 // NewAdditionalMediaInfoCallToActions instantiates a new AdditionalMediaInfoCallToActions object
@@ -106,7 +106,7 @@ func (o *AdditionalMediaInfoCallToActions) SetWatchNow(v AdditionalMediaInfoCall
 }
 
 func (o AdditionalMediaInfoCallToActions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableAdditionalMediaInfoCallToActions) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

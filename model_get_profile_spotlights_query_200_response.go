@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetProfileSpotlightsQuery200Response - struct for GetProfileSpotlightsQuery200Response
 type GetProfileSpotlightsQuery200Response struct {
-	Errors *Errors
+	Errors          *Errors
 	ProfileResponse *ProfileResponse
 }
 
@@ -36,7 +36,6 @@ func ProfileResponseAsGetProfileSpotlightsQuery200Response(v *ProfileResponse) G
 		ProfileResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetProfileSpotlightsQuery200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetProfileSpotlightsQuery200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetProfileSpotlightsQuery200Response) GetActualInstance() (interface{}) {
+func (obj *GetProfileSpotlightsQuery200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetProfileSpotlightsQuery200Response) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

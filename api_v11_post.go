@@ -19,27 +19,26 @@ import (
 	"net/url"
 )
 
-
 // V11PostAPIService V11PostAPI service
 type V11PostAPIService service
 
 type ApiPostCreateFriendshipsRequest struct {
-	ctx context.Context
-	ApiService *V11PostAPIService
-	includeBlockedBy *int32
-	includeBlocking *int32
-	includeCanDm *int32
-	includeCanMediaTag *int32
-	includeExtHasNftAvatar *int32
-	includeExtIsBlueVerified *int32
-	includeExtProfileImageShape *int32
-	includeExtVerifiedType *int32
-	includeFollowedBy *int32
-	includeMuteEdge *int32
+	ctx                            context.Context
+	ApiService                     *V11PostAPIService
+	includeBlockedBy               *int32
+	includeBlocking                *int32
+	includeCanDm                   *int32
+	includeCanMediaTag             *int32
+	includeExtHasNftAvatar         *int32
+	includeExtIsBlueVerified       *int32
+	includeExtProfileImageShape    *int32
+	includeExtVerifiedType         *int32
+	includeFollowedBy              *int32
+	includeMuteEdge                *int32
 	includeProfileInterstitialType *int32
-	includeWantRetweets *int32
-	skipStatus *int32
-	userId *string
+	includeWantRetweets            *int32
+	skipStatus                     *int32
+	userId                         *string
 }
 
 func (r ApiPostCreateFriendshipsRequest) IncludeBlockedBy(includeBlockedBy int32) ApiPostCreateFriendshipsRequest {
@@ -121,22 +120,22 @@ PostCreateFriendships Method for PostCreateFriendships
 
 post create friendships
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostCreateFriendshipsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostCreateFriendshipsRequest
 */
 func (a *V11PostAPIService) PostCreateFriendships(ctx context.Context) ApiPostCreateFriendshipsRequest {
 	return ApiPostCreateFriendshipsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *V11PostAPIService) PostCreateFriendshipsExecute(r ApiPostCreateFriendshipsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "V11PostAPIService.PostCreateFriendships")
@@ -504,22 +503,22 @@ func (a *V11PostAPIService) PostCreateFriendshipsExecute(r ApiPostCreateFriendsh
 }
 
 type ApiPostDestroyFriendshipsRequest struct {
-	ctx context.Context
-	ApiService *V11PostAPIService
-	includeBlockedBy *int32
-	includeBlocking *int32
-	includeCanDm *int32
-	includeCanMediaTag *int32
-	includeExtHasNftAvatar *int32
-	includeExtIsBlueVerified *int32
-	includeExtProfileImageShape *int32
-	includeExtVerifiedType *int32
-	includeFollowedBy *int32
-	includeMuteEdge *int32
+	ctx                            context.Context
+	ApiService                     *V11PostAPIService
+	includeBlockedBy               *int32
+	includeBlocking                *int32
+	includeCanDm                   *int32
+	includeCanMediaTag             *int32
+	includeExtHasNftAvatar         *int32
+	includeExtIsBlueVerified       *int32
+	includeExtProfileImageShape    *int32
+	includeExtVerifiedType         *int32
+	includeFollowedBy              *int32
+	includeMuteEdge                *int32
 	includeProfileInterstitialType *int32
-	includeWantRetweets *int32
-	skipStatus *int32
-	userId *string
+	includeWantRetweets            *int32
+	skipStatus                     *int32
+	userId                         *string
 }
 
 func (r ApiPostDestroyFriendshipsRequest) IncludeBlockedBy(includeBlockedBy int32) ApiPostDestroyFriendshipsRequest {
@@ -601,22 +600,22 @@ PostDestroyFriendships Method for PostDestroyFriendships
 
 post destroy friendships
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPostDestroyFriendshipsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiPostDestroyFriendshipsRequest
 */
 func (a *V11PostAPIService) PostDestroyFriendships(ctx context.Context) ApiPostDestroyFriendshipsRequest {
 	return ApiPostDestroyFriendshipsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *V11PostAPIService) PostDestroyFriendshipsExecute(r ApiPostDestroyFriendshipsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "V11PostAPIService.PostDestroyFriendships")

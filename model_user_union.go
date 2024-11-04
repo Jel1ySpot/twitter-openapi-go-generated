@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // UserUnion - struct for UserUnion
 type UserUnion struct {
-	User *User
+	User            *User
 	UserUnavailable *UserUnavailable
 }
 
@@ -36,7 +36,6 @@ func UserUnavailableAsUserUnion(v *UserUnavailable) UserUnion {
 		UserUnavailable: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *UserUnion) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src UserUnion) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *UserUnion) GetActualInstance() (interface{}) {
+func (obj *UserUnion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableUserUnion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,16 +20,15 @@ import (
 	"strings"
 )
 
-
 // UsersAPIService UsersAPI service
 type UsersAPIService service
 
 type ApiGetUsersByRestIdsRequest struct {
-	ctx context.Context
-	ApiService *UsersAPIService
+	ctx         context.Context
+	ApiService  *UsersAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetUsersByRestIdsRequest) Variables(variables map[string]interface{}) ApiGetUsersByRestIdsRequest {
@@ -51,26 +50,27 @@ GetUsersByRestIds Method for GetUsersByRestIds
 
 get users by rest ids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUsersByRestIdsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUsersByRestIdsRequest
 */
 func (a *UsersAPIService) GetUsersByRestIds(ctx context.Context, pathQueryId string) ApiGetUsersByRestIdsRequest {
 	return ApiGetUsersByRestIdsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetUsersByRestIds200Response
+//
+//	@return GetUsersByRestIds200Response
 func (a *UsersAPIService) GetUsersByRestIdsExecute(r ApiGetUsersByRestIdsRequest) (*GetUsersByRestIds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetUsersByRestIds200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetUsersByRestIds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.GetUsersByRestIds")

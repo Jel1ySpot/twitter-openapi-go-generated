@@ -13,14 +13,14 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // PostCreateBookmark200Response - struct for PostCreateBookmark200Response
 type PostCreateBookmark200Response struct {
 	CreateBookmarkResponse *CreateBookmarkResponse
-	Errors *Errors
+	Errors                 *Errors
 }
 
 // CreateBookmarkResponseAsPostCreateBookmark200Response is a convenience function that returns CreateBookmarkResponse wrapped in PostCreateBookmark200Response
@@ -36,7 +36,6 @@ func ErrorsAsPostCreateBookmark200Response(v *Errors) PostCreateBookmark200Respo
 		Errors: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PostCreateBookmark200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src PostCreateBookmark200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PostCreateBookmark200Response) GetActualInstance() (interface{}) {
+func (obj *PostCreateBookmark200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullablePostCreateBookmark200Response) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

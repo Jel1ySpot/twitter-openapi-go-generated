@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,10 +22,10 @@ var _ MappedNullable = &TweetEditControlInitial{}
 
 // TweetEditControlInitial struct for TweetEditControlInitial
 type TweetEditControlInitial struct {
-	EditTweetIds []string `json:"edit_tweet_ids"`
-	EditableUntilMsecs string `json:"editable_until_msecs" validate:"regexp=^[0-9]+$"`
-	EditsRemaining string `json:"edits_remaining" validate:"regexp=^[0-9]+$"`
-	IsEditEligible bool `json:"is_edit_eligible"`
+	EditTweetIds       []string `json:"edit_tweet_ids"`
+	EditableUntilMsecs string   `json:"editable_until_msecs" validate:"regexp=^[0-9]+$"`
+	EditsRemaining     string   `json:"edits_remaining" validate:"regexp=^[0-9]+$"`
+	IsEditEligible     bool     `json:"is_edit_eligible"`
 }
 
 type _TweetEditControlInitial TweetEditControlInitial
@@ -148,7 +148,7 @@ func (o *TweetEditControlInitial) SetIsEditEligible(v bool) {
 }
 
 func (o TweetEditControlInitial) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,10 +180,10 @@ func (o *TweetEditControlInitial) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -239,5 +239,3 @@ func (v *NullableTweetEditControlInitial) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,7 +21,7 @@ type ContentEntryType string
 
 // List of ContentEntryType
 const (
-	TIMELINE_TIMELINE_ITEM ContentEntryType = "TimelineTimelineItem"
+	TIMELINE_TIMELINE_ITEM   ContentEntryType = "TimelineTimelineItem"
 	TIMELINE_TIMELINE_CURSOR ContentEntryType = "TimelineTimelineCursor"
 	TIMELINE_TIMELINE_MODULE ContentEntryType = "TimelineTimelineModule"
 )
@@ -111,4 +111,3 @@ func (v *NullableContentEntryType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

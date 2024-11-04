@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,11 +22,11 @@ var _ MappedNullable = &ArticleCoverMediaInfo{}
 
 // ArticleCoverMediaInfo struct for ArticleCoverMediaInfo
 type ArticleCoverMediaInfo struct {
-	Typename *TypeName `json:"__typename,omitempty"`
-	ColorInfo ArticleCoverMediaColorInfo `json:"color_info"`
-	OriginalImgHeight int32 `json:"original_img_height"`
-	OriginalImgUrl string `json:"original_img_url"`
-	OriginalImgWidth int32 `json:"original_img_width"`
+	Typename          *TypeName                  `json:"__typename,omitempty"`
+	ColorInfo         ArticleCoverMediaColorInfo `json:"color_info"`
+	OriginalImgHeight int32                      `json:"original_img_height"`
+	OriginalImgUrl    string                     `json:"original_img_url"`
+	OriginalImgWidth  int32                      `json:"original_img_width"`
 }
 
 type _ArticleCoverMediaInfo ArticleCoverMediaInfo
@@ -181,7 +181,7 @@ func (o *ArticleCoverMediaInfo) SetOriginalImgWidth(v int32) {
 }
 
 func (o ArticleCoverMediaInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -216,10 +216,10 @@ func (o *ArticleCoverMediaInfo) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -275,5 +275,3 @@ func (v *NullableArticleCoverMediaInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

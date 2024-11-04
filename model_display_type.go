@@ -21,10 +21,10 @@ type DisplayType string
 
 // List of DisplayType
 const (
-	VERTICAL DisplayType = "Vertical"
+	VERTICAL              DisplayType = "Vertical"
 	VERTICAL_CONVERSATION DisplayType = "VerticalConversation"
-	VERTICAL_GRID DisplayType = "VerticalGrid"
-	CAROUSEL DisplayType = "Carousel"
+	VERTICAL_GRID         DisplayType = "VerticalGrid"
+	CAROUSEL              DisplayType = "Carousel"
 )
 
 // All allowed values of DisplayType enum
@@ -113,4 +113,3 @@ func (v *NullableDisplayType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

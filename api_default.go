@@ -20,16 +20,15 @@ import (
 	"strings"
 )
 
-
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
 type ApiGetProfileSpotlightsQueryRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
+	ctx         context.Context
+	ApiService  *DefaultAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetProfileSpotlightsQueryRequest) Variables(variables map[string]interface{}) ApiGetProfileSpotlightsQueryRequest {
@@ -51,26 +50,27 @@ GetProfileSpotlightsQuery Method for GetProfileSpotlightsQuery
 
 get user by screen name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetProfileSpotlightsQueryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetProfileSpotlightsQueryRequest
 */
 func (a *DefaultAPIService) GetProfileSpotlightsQuery(ctx context.Context, pathQueryId string) ApiGetProfileSpotlightsQueryRequest {
 	return ApiGetProfileSpotlightsQueryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetProfileSpotlightsQuery200Response
+//
+//	@return GetProfileSpotlightsQuery200Response
 func (a *DefaultAPIService) GetProfileSpotlightsQueryExecute(r ApiGetProfileSpotlightsQueryRequest) (*GetProfileSpotlightsQuery200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetProfileSpotlightsQuery200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetProfileSpotlightsQuery200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetProfileSpotlightsQuery")
@@ -400,11 +400,11 @@ func (a *DefaultAPIService) GetProfileSpotlightsQueryExecute(r ApiGetProfileSpot
 }
 
 type ApiGetTweetResultByRestIdRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *DefaultAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -432,26 +432,27 @@ GetTweetResultByRestId Method for GetTweetResultByRestId
 
 get TweetResultByRestId
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetTweetResultByRestIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetTweetResultByRestIdRequest
 */
 func (a *DefaultAPIService) GetTweetResultByRestId(ctx context.Context, pathQueryId string) ApiGetTweetResultByRestIdRequest {
 	return ApiGetTweetResultByRestIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetTweetResultByRestId200Response
+//
+//	@return GetTweetResultByRestId200Response
 func (a *DefaultAPIService) GetTweetResultByRestIdExecute(r ApiGetTweetResultByRestIdRequest) (*GetTweetResultByRestId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTweetResultByRestId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTweetResultByRestId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.GetTweetResultByRestId")

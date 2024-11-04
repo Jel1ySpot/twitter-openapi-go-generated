@@ -20,16 +20,15 @@ import (
 	"strings"
 )
 
-
 // UserListAPIService UserListAPI service
 type UserListAPIService service
 
 type ApiGetFavoritersRequest struct {
-	ctx context.Context
-	ApiService *UserListAPIService
+	ctx         context.Context
+	ApiService  *UserListAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetFavoritersRequest) Variables(variables map[string]interface{}) ApiGetFavoritersRequest {
@@ -51,26 +50,27 @@ GetFavoriters Method for GetFavoriters
 
 get tweet favoriters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetFavoritersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetFavoritersRequest
 */
 func (a *UserListAPIService) GetFavoriters(ctx context.Context, pathQueryId string) ApiGetFavoritersRequest {
 	return ApiGetFavoritersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetFavoriters200Response
+//
+//	@return GetFavoriters200Response
 func (a *UserListAPIService) GetFavoritersExecute(r ApiGetFavoritersRequest) (*GetFavoriters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFavoriters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetFavoriters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserListAPIService.GetFavoriters")
@@ -400,11 +400,11 @@ func (a *UserListAPIService) GetFavoritersExecute(r ApiGetFavoritersRequest) (*G
 }
 
 type ApiGetFollowersRequest struct {
-	ctx context.Context
-	ApiService *UserListAPIService
+	ctx         context.Context
+	ApiService  *UserListAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetFollowersRequest) Variables(variables map[string]interface{}) ApiGetFollowersRequest {
@@ -426,26 +426,27 @@ GetFollowers Method for GetFollowers
 
 get user list of followers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetFollowersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetFollowersRequest
 */
 func (a *UserListAPIService) GetFollowers(ctx context.Context, pathQueryId string) ApiGetFollowersRequest {
 	return ApiGetFollowersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetFollowers200Response
+//
+//	@return GetFollowers200Response
 func (a *UserListAPIService) GetFollowersExecute(r ApiGetFollowersRequest) (*GetFollowers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFollowers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetFollowers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserListAPIService.GetFollowers")
@@ -775,11 +776,11 @@ func (a *UserListAPIService) GetFollowersExecute(r ApiGetFollowersRequest) (*Get
 }
 
 type ApiGetFollowersYouKnowRequest struct {
-	ctx context.Context
-	ApiService *UserListAPIService
+	ctx         context.Context
+	ApiService  *UserListAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetFollowersYouKnowRequest) Variables(variables map[string]interface{}) ApiGetFollowersYouKnowRequest {
@@ -801,26 +802,27 @@ GetFollowersYouKnow Method for GetFollowersYouKnow
 
 get followers you know
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetFollowersYouKnowRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetFollowersYouKnowRequest
 */
 func (a *UserListAPIService) GetFollowersYouKnow(ctx context.Context, pathQueryId string) ApiGetFollowersYouKnowRequest {
 	return ApiGetFollowersYouKnowRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetFollowers200Response
+//
+//	@return GetFollowers200Response
 func (a *UserListAPIService) GetFollowersYouKnowExecute(r ApiGetFollowersYouKnowRequest) (*GetFollowers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFollowers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetFollowers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserListAPIService.GetFollowersYouKnow")
@@ -1150,11 +1152,11 @@ func (a *UserListAPIService) GetFollowersYouKnowExecute(r ApiGetFollowersYouKnow
 }
 
 type ApiGetFollowingRequest struct {
-	ctx context.Context
-	ApiService *UserListAPIService
+	ctx         context.Context
+	ApiService  *UserListAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetFollowingRequest) Variables(variables map[string]interface{}) ApiGetFollowingRequest {
@@ -1176,26 +1178,27 @@ GetFollowing Method for GetFollowing
 
 get user list of following
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetFollowingRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetFollowingRequest
 */
 func (a *UserListAPIService) GetFollowing(ctx context.Context, pathQueryId string) ApiGetFollowingRequest {
 	return ApiGetFollowingRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetFollowers200Response
+//
+//	@return GetFollowers200Response
 func (a *UserListAPIService) GetFollowingExecute(r ApiGetFollowingRequest) (*GetFollowers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetFollowers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetFollowers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserListAPIService.GetFollowing")
@@ -1525,11 +1528,11 @@ func (a *UserListAPIService) GetFollowingExecute(r ApiGetFollowingRequest) (*Get
 }
 
 type ApiGetRetweetersRequest struct {
-	ctx context.Context
-	ApiService *UserListAPIService
+	ctx         context.Context
+	ApiService  *UserListAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetRetweetersRequest) Variables(variables map[string]interface{}) ApiGetRetweetersRequest {
@@ -1551,26 +1554,27 @@ GetRetweeters Method for GetRetweeters
 
 get tweet retweeters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetRetweetersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetRetweetersRequest
 */
 func (a *UserListAPIService) GetRetweeters(ctx context.Context, pathQueryId string) ApiGetRetweetersRequest {
 	return ApiGetRetweetersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetRetweeters200Response
+//
+//	@return GetRetweeters200Response
 func (a *UserListAPIService) GetRetweetersExecute(r ApiGetRetweetersRequest) (*GetRetweeters200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetRetweeters200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetRetweeters200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserListAPIService.GetRetweeters")

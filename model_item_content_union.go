@@ -13,18 +13,18 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // ItemContentUnion - struct for ItemContentUnion
 type ItemContentUnion struct {
-	TimelineCommunity *TimelineCommunity
-	TimelineMessagePrompt *TimelineMessagePrompt
-	TimelinePrompt *TimelinePrompt
+	TimelineCommunity      *TimelineCommunity
+	TimelineMessagePrompt  *TimelineMessagePrompt
+	TimelinePrompt         *TimelinePrompt
 	TimelineTimelineCursor *TimelineTimelineCursor
-	TimelineTweet *TimelineTweet
-	TimelineUser *TimelineUser
+	TimelineTweet          *TimelineTweet
+	TimelineUser           *TimelineUser
 }
 
 // TimelineCommunityAsItemContentUnion is a convenience function that returns TimelineCommunity wrapped in ItemContentUnion
@@ -68,7 +68,6 @@ func TimelineUserAsItemContentUnion(v *TimelineUser) ItemContentUnion {
 		TimelineUser: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *ItemContentUnion) UnmarshalJSON(data []byte) error {
@@ -223,7 +222,7 @@ func (src ItemContentUnion) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *ItemContentUnion) GetActualInstance() (interface{}) {
+func (obj *ItemContentUnion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -290,5 +289,3 @@ func (v *NullableItemContentUnion) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

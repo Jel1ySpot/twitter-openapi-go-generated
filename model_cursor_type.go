@@ -21,11 +21,11 @@ type CursorType string
 
 // List of CursorType
 const (
-	TOP CursorType = "Top"
-	BOTTOM CursorType = "Bottom"
-	SHOW_MORE CursorType = "ShowMore"
-	SHOW_MORE_THREADS CursorType = "ShowMoreThreads"
-	GAP CursorType = "Gap"
+	TOP                      CursorType = "Top"
+	BOTTOM                   CursorType = "Bottom"
+	SHOW_MORE                CursorType = "ShowMore"
+	SHOW_MORE_THREADS        CursorType = "ShowMoreThreads"
+	GAP                      CursorType = "Gap"
 	SHOW_MORE_THREADS_PROMPT CursorType = "ShowMoreThreadsPrompt"
 )
 
@@ -117,4 +117,3 @@ func (v *NullableCursorType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

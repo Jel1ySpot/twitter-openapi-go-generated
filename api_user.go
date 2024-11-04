@@ -20,16 +20,15 @@ import (
 	"strings"
 )
 
-
 // UserAPIService UserAPI service
 type UserAPIService service
 
 type ApiGetUserByRestIdRequest struct {
-	ctx context.Context
-	ApiService *UserAPIService
+	ctx         context.Context
+	ApiService  *UserAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetUserByRestIdRequest) Variables(variables map[string]interface{}) ApiGetUserByRestIdRequest {
@@ -51,26 +50,27 @@ GetUserByRestId Method for GetUserByRestId
 
 get user by rest id
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserByRestIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserByRestIdRequest
 */
 func (a *UserAPIService) GetUserByRestId(ctx context.Context, pathQueryId string) ApiGetUserByRestIdRequest {
 	return ApiGetUserByRestIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetUserByRestId200Response
+//
+//	@return GetUserByRestId200Response
 func (a *UserAPIService) GetUserByRestIdExecute(r ApiGetUserByRestIdRequest) (*GetUserByRestId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetUserByRestId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetUserByRestId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserByRestId")
@@ -400,11 +400,11 @@ func (a *UserAPIService) GetUserByRestIdExecute(r ApiGetUserByRestIdRequest) (*G
 }
 
 type ApiGetUserByScreenNameRequest struct {
-	ctx context.Context
-	ApiService *UserAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *UserAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -432,26 +432,27 @@ GetUserByScreenName Method for GetUserByScreenName
 
 get user by screen name
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserByScreenNameRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserByScreenNameRequest
 */
 func (a *UserAPIService) GetUserByScreenName(ctx context.Context, pathQueryId string) ApiGetUserByScreenNameRequest {
 	return ApiGetUserByScreenNameRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetUserByRestId200Response
+//
+//	@return GetUserByRestId200Response
 func (a *UserAPIService) GetUserByScreenNameExecute(r ApiGetUserByScreenNameRequest) (*GetUserByRestId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetUserByRestId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetUserByRestId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUserByScreenName")

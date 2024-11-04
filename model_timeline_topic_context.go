@@ -20,9 +20,9 @@ var _ MappedNullable = &TimelineTopicContext{}
 
 // TimelineTopicContext struct for TimelineTopicContext
 type TimelineTopicContext struct {
-	FunctionalityType *string `json:"functionalityType,omitempty"`
-	Topic *TopicContext `json:"topic,omitempty"`
-	Type *SocialContextUnionType `json:"type,omitempty"`
+	FunctionalityType *string                 `json:"functionalityType,omitempty"`
+	Topic             *TopicContext           `json:"topic,omitempty"`
+	Type              *SocialContextUnionType `json:"type,omitempty"`
 }
 
 // NewTimelineTopicContext instantiates a new TimelineTopicContext object
@@ -139,7 +139,7 @@ func (o *TimelineTopicContext) SetType(v SocialContextUnionType) {
 }
 
 func (o TimelineTopicContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableTimelineTopicContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

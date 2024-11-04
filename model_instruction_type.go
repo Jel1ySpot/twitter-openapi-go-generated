@@ -21,14 +21,14 @@ type InstructionType string
 
 // List of InstructionType
 const (
-	TIMELINE_ADD_ENTRIES InstructionType = "TimelineAddEntries"
-	TIMELINE_ADD_TO_MODULE InstructionType = "TimelineAddToModule"
-	TIMELINE_CLEAR_CACHE InstructionType = "TimelineClearCache"
-	TIMELINE_PIN_ENTRY InstructionType = "TimelinePinEntry"
-	TIMELINE_REPLACE_ENTRY InstructionType = "TimelineReplaceEntry"
-	TIMELINE_SHOW_ALERT InstructionType = "TimelineShowAlert"
+	TIMELINE_ADD_ENTRIES        InstructionType = "TimelineAddEntries"
+	TIMELINE_ADD_TO_MODULE      InstructionType = "TimelineAddToModule"
+	TIMELINE_CLEAR_CACHE        InstructionType = "TimelineClearCache"
+	TIMELINE_PIN_ENTRY          InstructionType = "TimelinePinEntry"
+	TIMELINE_REPLACE_ENTRY      InstructionType = "TimelineReplaceEntry"
+	TIMELINE_SHOW_ALERT         InstructionType = "TimelineShowAlert"
 	TIMELINE_TERMINATE_TIMELINE InstructionType = "TimelineTerminateTimeline"
-	TIMELINE_SHOW_COVER InstructionType = "TimelineShowCover"
+	TIMELINE_SHOW_COVER         InstructionType = "TimelineShowCover"
 )
 
 // All allowed values of InstructionType enum
@@ -121,4 +121,3 @@ func (v *NullableInstructionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

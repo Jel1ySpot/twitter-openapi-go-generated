@@ -20,7 +20,7 @@ var _ MappedNullable = &TimelineMessagePrompt{}
 
 // TimelineMessagePrompt struct for TimelineMessagePrompt
 type TimelineMessagePrompt struct {
-	Typename *TypeName `json:"__typename,omitempty"`
+	Typename             *TypeName `json:"__typename,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -76,7 +76,7 @@ func (o *TimelineMessagePrompt) SetTypename(v TypeName) {
 }
 
 func (o TimelineMessagePrompt) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -152,5 +152,3 @@ func (v *NullableTimelineMessagePrompt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

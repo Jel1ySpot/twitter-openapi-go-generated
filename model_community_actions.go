@@ -21,10 +21,10 @@ var _ MappedNullable = &CommunityActions{}
 // CommunityActions struct for CommunityActions
 type CommunityActions struct {
 	DeleteActionResult *CommunityDeleteActionResult `json:"delete_action_result,omitempty"`
-	JoinActionResult *CommunityJoinActionResult `json:"join_action_result,omitempty"`
-	LeaveActionResult *CommunityLeaveActionResult `json:"leave_action_result,omitempty"`
-	PinActionResult *CommunityPinActionResult `json:"pin_action_result,omitempty"`
-	UnpinActionResult *CommunityUnpinActionResult `json:"unpin_action_result,omitempty"`
+	JoinActionResult   *CommunityJoinActionResult   `json:"join_action_result,omitempty"`
+	LeaveActionResult  *CommunityLeaveActionResult  `json:"leave_action_result,omitempty"`
+	PinActionResult    *CommunityPinActionResult    `json:"pin_action_result,omitempty"`
+	UnpinActionResult  *CommunityUnpinActionResult  `json:"unpin_action_result,omitempty"`
 }
 
 // NewCommunityActions instantiates a new CommunityActions object
@@ -205,7 +205,7 @@ func (o *CommunityActions) SetUnpinActionResult(v CommunityUnpinActionResult) {
 }
 
 func (o CommunityActions) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -267,5 +267,3 @@ func (v *NullableCommunityActions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -23,8 +23,8 @@ var _ MappedNullable = &ModuleEntry{}
 // ModuleEntry struct for ModuleEntry
 type ModuleEntry struct {
 	ClientEventInfo *ClientEventInfo `json:"clientEventInfo,omitempty"`
-	FeedbackInfo *FeedbackInfo `json:"feedbackInfo,omitempty"`
-	ItemContent ItemContentUnion `json:"itemContent"`
+	FeedbackInfo    *FeedbackInfo    `json:"feedbackInfo,omitempty"`
+	ItemContent     ItemContentUnion `json:"itemContent"`
 }
 
 type _ModuleEntry ModuleEntry
@@ -136,7 +136,7 @@ func (o *ModuleEntry) SetItemContent(v ItemContentUnion) {
 }
 
 func (o ModuleEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,10 +168,10 @@ func (o *ModuleEntry) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -227,5 +227,3 @@ func (v *NullableModuleEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

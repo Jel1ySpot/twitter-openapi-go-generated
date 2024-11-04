@@ -20,9 +20,9 @@ var _ MappedNullable = &ClientEventInfo{}
 
 // ClientEventInfo struct for ClientEventInfo
 type ClientEventInfo struct {
-	Component *string `json:"component,omitempty"`
-	Details map[string]interface{} `json:"details,omitempty"`
-	Element *string `json:"element,omitempty"`
+	Component *string                `json:"component,omitempty"`
+	Details   map[string]interface{} `json:"details,omitempty"`
+	Element   *string                `json:"element,omitempty"`
 }
 
 // NewClientEventInfo instantiates a new ClientEventInfo object
@@ -139,7 +139,7 @@ func (o *ClientEventInfo) SetElement(v string) {
 }
 
 func (o ClientEventInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -195,5 +195,3 @@ func (v *NullableClientEventInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

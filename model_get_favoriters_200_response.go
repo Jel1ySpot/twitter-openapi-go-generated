@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetFavoriters200Response - struct for GetFavoriters200Response
 type GetFavoriters200Response struct {
-	Errors *Errors
+	Errors                  *Errors
 	TweetFavoritersResponse *TweetFavoritersResponse
 }
 
@@ -36,7 +36,6 @@ func TweetFavoritersResponseAsGetFavoriters200Response(v *TweetFavoritersRespons
 		TweetFavoritersResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetFavoriters200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetFavoriters200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetFavoriters200Response) GetActualInstance() (interface{}) {
+func (obj *GetFavoriters200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetFavoriters200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

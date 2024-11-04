@@ -21,13 +21,13 @@ var _ MappedNullable = &UserTipJarSettings{}
 // UserTipJarSettings struct for UserTipJarSettings
 type UserTipJarSettings struct {
 	BandcampHandle *string `json:"bandcamp_handle,omitempty"`
-	BitcoinHandle *string `json:"bitcoin_handle,omitempty"`
-	CashAppHandle *string `json:"cash_app_handle,omitempty"`
+	BitcoinHandle  *string `json:"bitcoin_handle,omitempty"`
+	CashAppHandle  *string `json:"cash_app_handle,omitempty"`
 	EthereumHandle *string `json:"ethereum_handle,omitempty"`
 	GofundmeHandle *string `json:"gofundme_handle,omitempty"`
-	IsEnabled *bool `json:"is_enabled,omitempty"`
-	PatreonHandle *string `json:"patreon_handle,omitempty"`
-	VenmoHandle *string `json:"venmo_handle,omitempty"`
+	IsEnabled      *bool   `json:"is_enabled,omitempty"`
+	PatreonHandle  *string `json:"patreon_handle,omitempty"`
+	VenmoHandle    *string `json:"venmo_handle,omitempty"`
 }
 
 // NewUserTipJarSettings instantiates a new UserTipJarSettings object
@@ -304,7 +304,7 @@ func (o *UserTipJarSettings) SetVenmoHandle(v string) {
 }
 
 func (o UserTipJarSettings) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -375,5 +375,3 @@ func (v *NullableUserTipJarSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

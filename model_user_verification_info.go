@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,8 +22,8 @@ var _ MappedNullable = &UserVerificationInfo{}
 
 // UserVerificationInfo struct for UserVerificationInfo
 type UserVerificationInfo struct {
-	IsIdentityVerified bool `json:"is_identity_verified"`
-	Reason *UserVerificationInfoReason `json:"reason,omitempty"`
+	IsIdentityVerified bool                        `json:"is_identity_verified"`
+	Reason             *UserVerificationInfoReason `json:"reason,omitempty"`
 }
 
 type _UserVerificationInfo UserVerificationInfo
@@ -103,7 +103,7 @@ func (o *UserVerificationInfo) SetReason(v UserVerificationInfoReason) {
 }
 
 func (o UserVerificationInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -132,10 +132,10 @@ func (o *UserVerificationInfo) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -191,5 +191,3 @@ func (v *NullableUserVerificationInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

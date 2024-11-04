@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,9 +22,9 @@ var _ MappedNullable = &ArticleCoverMediaColorInfoPaletteRGB{}
 
 // ArticleCoverMediaColorInfoPaletteRGB struct for ArticleCoverMediaColorInfoPaletteRGB
 type ArticleCoverMediaColorInfoPaletteRGB struct {
-	Blue int32 `json:"blue"`
+	Blue  int32 `json:"blue"`
 	Green int32 `json:"green"`
-	Red int32 `json:"red"`
+	Red   int32 `json:"red"`
 }
 
 type _ArticleCoverMediaColorInfoPaletteRGB ArticleCoverMediaColorInfoPaletteRGB
@@ -122,7 +122,7 @@ func (o *ArticleCoverMediaColorInfoPaletteRGB) SetRed(v int32) {
 }
 
 func (o ArticleCoverMediaColorInfoPaletteRGB) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -152,10 +152,10 @@ func (o *ArticleCoverMediaColorInfoPaletteRGB) UnmarshalJSON(data []byte) (err e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -211,5 +211,3 @@ func (v *NullableArticleCoverMediaColorInfoPaletteRGB) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

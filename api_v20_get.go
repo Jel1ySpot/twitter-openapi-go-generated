@@ -19,50 +19,49 @@ import (
 	"net/url"
 )
 
-
 // V20GetAPIService V20GetAPI service
 type V20GetAPIService service
 
 type ApiGetSearchAdaptiveRequest struct {
-	ctx context.Context
-	ApiService *V20GetAPIService
-	includeProfileInterstitialType *int32
-	includeBlocking *int32
-	includeBlockedBy *int32
-	includeFollowedBy *int32
-	includeWantRetweets *int32
-	includeMuteEdge *int32
-	includeCanDm *int32
-	includeCanMediaTag *int32
-	includeExtHasNftAvatar *int32
-	includeExtIsBlueVerified *int32
-	includeExtVerifiedType *int32
-	includeExtProfileImageShape *int32
-	skipStatus *int32
-	cardsPlatform *string
-	includeCards *int32
-	includeExtAltText *bool
-	includeExtLimitedActionResults *bool
-	includeQuoteCount *bool
-	includeReplyCount *int32
-	tweetMode *string
-	includeExtViews *bool
-	includeEntities *bool
-	includeUserEntities *bool
-	includeExtMediaColor *bool
-	includeExtMediaAvailability *bool
-	includeExtSensitiveMediaWarning *bool
+	ctx                              context.Context
+	ApiService                       *V20GetAPIService
+	includeProfileInterstitialType   *int32
+	includeBlocking                  *int32
+	includeBlockedBy                 *int32
+	includeFollowedBy                *int32
+	includeWantRetweets              *int32
+	includeMuteEdge                  *int32
+	includeCanDm                     *int32
+	includeCanMediaTag               *int32
+	includeExtHasNftAvatar           *int32
+	includeExtIsBlueVerified         *int32
+	includeExtVerifiedType           *int32
+	includeExtProfileImageShape      *int32
+	skipStatus                       *int32
+	cardsPlatform                    *string
+	includeCards                     *int32
+	includeExtAltText                *bool
+	includeExtLimitedActionResults   *bool
+	includeQuoteCount                *bool
+	includeReplyCount                *int32
+	tweetMode                        *string
+	includeExtViews                  *bool
+	includeEntities                  *bool
+	includeUserEntities              *bool
+	includeExtMediaColor             *bool
+	includeExtMediaAvailability      *bool
+	includeExtSensitiveMediaWarning  *bool
 	includeExtTrustedFriendsMetadata *bool
-	sendErrorCodes *bool
-	simpleQuotedTweet *bool
-	q *string
-	querySource *string
-	count *int32
-	requestContext *string
-	pc *int32
-	spellingCorrections *int32
-	includeExtEditControl *bool
-	ext *string
+	sendErrorCodes                   *bool
+	simpleQuotedTweet                *bool
+	q                                *string
+	querySource                      *string
+	count                            *int32
+	requestContext                   *string
+	pc                               *int32
+	spellingCorrections              *int32
+	includeExtEditControl            *bool
+	ext                              *string
 }
 
 func (r ApiGetSearchAdaptiveRequest) IncludeProfileInterstitialType(includeProfileInterstitialType int32) ApiGetSearchAdaptiveRequest {
@@ -259,22 +258,22 @@ GetSearchAdaptive Method for GetSearchAdaptive
 
 get search adaptive
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSearchAdaptiveRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSearchAdaptiveRequest
 */
 func (a *V20GetAPIService) GetSearchAdaptive(ctx context.Context) ApiGetSearchAdaptiveRequest {
 	return ApiGetSearchAdaptiveRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *V20GetAPIService) GetSearchAdaptiveExecute(r ApiGetSearchAdaptiveRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "V20GetAPIService.GetSearchAdaptive")

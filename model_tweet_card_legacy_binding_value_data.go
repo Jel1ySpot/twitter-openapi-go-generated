@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,13 +22,13 @@ var _ MappedNullable = &TweetCardLegacyBindingValueData{}
 
 // TweetCardLegacyBindingValueData struct for TweetCardLegacyBindingValueData
 type TweetCardLegacyBindingValueData struct {
-	BooleanValue *bool `json:"boolean_value,omitempty"`
-	ImageColorValue map[string]interface{} `json:"image_color_value,omitempty"`
-	ImageValue *TweetCardLegacyBindingValueDataImage `json:"image_value,omitempty"`
-	ScribeKey *string `json:"scribe_key,omitempty"`
-	StringValue *string `json:"string_value,omitempty"`
-	Type string `json:"type"`
-	UserValue *UserValue `json:"user_value,omitempty"`
+	BooleanValue    *bool                                 `json:"boolean_value,omitempty"`
+	ImageColorValue map[string]interface{}                `json:"image_color_value,omitempty"`
+	ImageValue      *TweetCardLegacyBindingValueDataImage `json:"image_value,omitempty"`
+	ScribeKey       *string                               `json:"scribe_key,omitempty"`
+	StringValue     *string                               `json:"string_value,omitempty"`
+	Type            string                                `json:"type"`
+	UserValue       *UserValue                            `json:"user_value,omitempty"`
 }
 
 type _TweetCardLegacyBindingValueData TweetCardLegacyBindingValueData
@@ -268,7 +268,7 @@ func (o *TweetCardLegacyBindingValueData) SetUserValue(v UserValue) {
 }
 
 func (o TweetCardLegacyBindingValueData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -312,10 +312,10 @@ func (o *TweetCardLegacyBindingValueData) UnmarshalJSON(data []byte) (err error)
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -371,5 +371,3 @@ func (v *NullableTweetCardLegacyBindingValueData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,32 +22,32 @@ var _ MappedNullable = &CommunityData{}
 
 // CommunityData struct for CommunityData
 type CommunityData struct {
-	Typename TypeName `json:"__typename"`
-	Actions CommunityActions `json:"actions"`
-	AdminResults UserResults `json:"admin_results"`
-	CreatedAt *int32 `json:"created_at,omitempty"`
-	CreatorResults UserResults `json:"creator_results"`
-	CustomBannerMedia map[string]interface{} `json:"custom_banner_media,omitempty"`
-	DefaultBannerMedia map[string]interface{} `json:"default_banner_media,omitempty"`
-	Description string `json:"description"`
-	IdStr string `json:"id_str" validate:"regexp=^[0-9]+$"`
-	InvitesPolicy string `json:"invites_policy"`
-	InvitesResult CommunityInvitesResult `json:"invites_result"`
-	IsPinned bool `json:"is_pinned"`
-	JoinPolicy string `json:"join_policy"`
-	JoinRequestsResult *CommunityJoinRequestsResult `json:"join_requests_result,omitempty"`
-	MemberCount int32 `json:"member_count"`
-	MembersFacepileResults []UserResults `json:"members_facepile_results"`
-	ModeratorCount int32 `json:"moderator_count"`
-	Name string `json:"name"`
-	PrimaryCommunityTopic *PrimaryCommunityTopic `json:"primary_community_topic,omitempty"`
-	Question *string `json:"question,omitempty"`
-	Role string `json:"role"`
-	Rules []CommunityRule `json:"rules"`
-	SearchTags []string `json:"search_tags"`
-	ShowOnlyUsersToDisplay []string `json:"show_only_users_to_display,omitempty"`
-	Urls *CommunityUrls `json:"urls,omitempty"`
-	ViewerRelationship map[string]interface{} `json:"viewer_relationship,omitempty"`
+	Typename               TypeName                     `json:"__typename"`
+	Actions                CommunityActions             `json:"actions"`
+	AdminResults           UserResults                  `json:"admin_results"`
+	CreatedAt              *int32                       `json:"created_at,omitempty"`
+	CreatorResults         UserResults                  `json:"creator_results"`
+	CustomBannerMedia      map[string]interface{}       `json:"custom_banner_media,omitempty"`
+	DefaultBannerMedia     map[string]interface{}       `json:"default_banner_media,omitempty"`
+	Description            string                       `json:"description"`
+	IdStr                  string                       `json:"id_str" validate:"regexp=^[0-9]+$"`
+	InvitesPolicy          string                       `json:"invites_policy"`
+	InvitesResult          CommunityInvitesResult       `json:"invites_result"`
+	IsPinned               bool                         `json:"is_pinned"`
+	JoinPolicy             string                       `json:"join_policy"`
+	JoinRequestsResult     *CommunityJoinRequestsResult `json:"join_requests_result,omitempty"`
+	MemberCount            int32                        `json:"member_count"`
+	MembersFacepileResults []UserResults                `json:"members_facepile_results"`
+	ModeratorCount         int32                        `json:"moderator_count"`
+	Name                   string                       `json:"name"`
+	PrimaryCommunityTopic  *PrimaryCommunityTopic       `json:"primary_community_topic,omitempty"`
+	Question               *string                      `json:"question,omitempty"`
+	Role                   string                       `json:"role"`
+	Rules                  []CommunityRule              `json:"rules"`
+	SearchTags             []string                     `json:"search_tags"`
+	ShowOnlyUsersToDisplay []string                     `json:"show_only_users_to_display,omitempty"`
+	Urls                   *CommunityUrls               `json:"urls,omitempty"`
+	ViewerRelationship     map[string]interface{}       `json:"viewer_relationship,omitempty"`
 }
 
 type _CommunityData CommunityData
@@ -783,7 +783,7 @@ func (o *CommunityData) SetViewerRelationship(v map[string]interface{}) {
 }
 
 func (o CommunityData) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -868,10 +868,10 @@ func (o *CommunityData) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -927,5 +927,3 @@ func (v *NullableCommunityData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

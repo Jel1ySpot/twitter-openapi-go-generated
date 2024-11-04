@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &BirdwatchPivotFooter{}
 // BirdwatchPivotFooter struct for BirdwatchPivotFooter
 type BirdwatchPivotFooter struct {
 	Entities []BirdwatchEntity `json:"entities"`
-	Text string `json:"text"`
+	Text     string            `json:"text"`
 }
 
 type _BirdwatchPivotFooter BirdwatchPivotFooter
@@ -96,7 +96,7 @@ func (o *BirdwatchPivotFooter) SetText(v string) {
 }
 
 func (o BirdwatchPivotFooter) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -124,10 +124,10 @@ func (o *BirdwatchPivotFooter) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -183,5 +183,3 @@ func (v *NullableBirdwatchPivotFooter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

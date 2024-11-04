@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,15 +22,15 @@ var _ MappedNullable = &TimelineShowAlert{}
 
 // TimelineShowAlert struct for TimelineShowAlert
 type TimelineShowAlert struct {
-	AlertType *string `json:"alertType,omitempty"`
-	ColorConfig map[string]interface{} `json:"colorConfig,omitempty"`
-	DisplayDurationMs *int32 `json:"displayDurationMs,omitempty"`
-	DisplayLocation *string `json:"displayLocation,omitempty"`
-	IconDisplayInfo map[string]interface{} `json:"iconDisplayInfo,omitempty"`
-	RichText TimelineShowAlertRichText `json:"richText"`
-	TriggerDelayMs *int32 `json:"triggerDelayMs,omitempty"`
-	Type InstructionType `json:"type"`
-	UsersResults []UserResults `json:"usersResults"`
+	AlertType         *string                   `json:"alertType,omitempty"`
+	ColorConfig       map[string]interface{}    `json:"colorConfig,omitempty"`
+	DisplayDurationMs *int32                    `json:"displayDurationMs,omitempty"`
+	DisplayLocation   *string                   `json:"displayLocation,omitempty"`
+	IconDisplayInfo   map[string]interface{}    `json:"iconDisplayInfo,omitempty"`
+	RichText          TimelineShowAlertRichText `json:"richText"`
+	TriggerDelayMs    *int32                    `json:"triggerDelayMs,omitempty"`
+	Type              InstructionType           `json:"type"`
+	UsersResults      []UserResults             `json:"usersResults"`
 }
 
 type _TimelineShowAlert TimelineShowAlert
@@ -320,7 +320,7 @@ func (o *TimelineShowAlert) SetUsersResults(v []UserResults) {
 }
 
 func (o TimelineShowAlert) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -368,10 +368,10 @@ func (o *TimelineShowAlert) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -427,5 +427,3 @@ func (v *NullableTimelineShowAlert) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

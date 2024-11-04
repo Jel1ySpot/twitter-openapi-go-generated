@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,27 +22,27 @@ var _ MappedNullable = &MediaExtended{}
 
 // MediaExtended struct for MediaExtended
 type MediaExtended struct {
-	AdditionalMediaInfo *AdditionalMediaInfo `json:"additional_media_info,omitempty"`
-	AllowDownloadStatus *AllowDownloadStatus `json:"allow_download_status,omitempty"`
-	DisplayUrl string `json:"display_url"`
-	ExpandedUrl string `json:"expanded_url"`
-	ExtAltText *string `json:"ext_alt_text,omitempty"`
-	ExtMediaAvailability *ExtMediaAvailability `json:"ext_media_availability,omitempty"`
-	Features map[string]interface{} `json:"features,omitempty"`
-	IdStr string `json:"id_str" validate:"regexp=^[0-9]+$"`
-	Indices []int32 `json:"indices"`
-	MediaStats *MediaStats `json:"mediaStats,omitempty"`
-	MediaKey string `json:"media_key"`
-	MediaResults *MediaResults `json:"media_results,omitempty"`
-	MediaUrlHttps string `json:"media_url_https"`
-	OriginalInfo MediaOriginalInfo `json:"original_info"`
+	AdditionalMediaInfo   *AdditionalMediaInfo   `json:"additional_media_info,omitempty"`
+	AllowDownloadStatus   *AllowDownloadStatus   `json:"allow_download_status,omitempty"`
+	DisplayUrl            string                 `json:"display_url"`
+	ExpandedUrl           string                 `json:"expanded_url"`
+	ExtAltText            *string                `json:"ext_alt_text,omitempty"`
+	ExtMediaAvailability  *ExtMediaAvailability  `json:"ext_media_availability,omitempty"`
+	Features              map[string]interface{} `json:"features,omitempty"`
+	IdStr                 string                 `json:"id_str" validate:"regexp=^[0-9]+$"`
+	Indices               []int32                `json:"indices"`
+	MediaStats            *MediaStats            `json:"mediaStats,omitempty"`
+	MediaKey              string                 `json:"media_key"`
+	MediaResults          *MediaResults          `json:"media_results,omitempty"`
+	MediaUrlHttps         string                 `json:"media_url_https"`
+	OriginalInfo          MediaOriginalInfo      `json:"original_info"`
 	SensitiveMediaWarning *SensitiveMediaWarning `json:"sensitive_media_warning,omitempty"`
-	Sizes MediaSizes `json:"sizes"`
-	SourceStatusIdStr *string `json:"source_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
-	SourceUserIdStr *string `json:"source_user_id_str,omitempty" validate:"regexp=^[0-9]+$"`
-	Type string `json:"type"`
-	Url string `json:"url"`
-	VideoInfo *MediaVideoInfo `json:"video_info,omitempty"`
+	Sizes                 MediaSizes             `json:"sizes"`
+	SourceStatusIdStr     *string                `json:"source_status_id_str,omitempty" validate:"regexp=^[0-9]+$"`
+	SourceUserIdStr       *string                `json:"source_user_id_str,omitempty" validate:"regexp=^[0-9]+$"`
+	Type                  string                 `json:"type"`
+	Url                   string                 `json:"url"`
+	VideoInfo             *MediaVideoInfo        `json:"video_info,omitempty"`
 }
 
 type _MediaExtended MediaExtended
@@ -667,7 +667,7 @@ func (o *MediaExtended) SetVideoInfo(v MediaVideoInfo) {
 }
 
 func (o MediaExtended) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -744,10 +744,10 @@ func (o *MediaExtended) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -803,5 +803,3 @@ func (v *NullableMediaExtended) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

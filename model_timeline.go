@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,8 +22,8 @@ var _ MappedNullable = &Timeline{}
 
 // Timeline struct for Timeline
 type Timeline struct {
-	Instructions []InstructionUnion `json:"instructions"`
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Instructions    []InstructionUnion     `json:"instructions"`
+	Metadata        map[string]interface{} `json:"metadata,omitempty"`
 	ResponseObjects map[string]interface{} `json:"responseObjects,omitempty"`
 }
 
@@ -136,7 +136,7 @@ func (o *Timeline) SetResponseObjects(v map[string]interface{}) {
 }
 
 func (o Timeline) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -168,10 +168,10 @@ func (o *Timeline) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -227,5 +227,3 @@ func (v *NullableTimeline) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

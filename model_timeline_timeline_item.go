@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,11 +22,11 @@ var _ MappedNullable = &TimelineTimelineItem{}
 
 // TimelineTimelineItem struct for TimelineTimelineItem
 type TimelineTimelineItem struct {
-	Typename TypeName `json:"__typename"`
-	ClientEventInfo *ClientEventInfo `json:"clientEventInfo,omitempty"`
-	EntryType ContentEntryType `json:"entryType"`
-	FeedbackInfo map[string]interface{} `json:"feedbackInfo,omitempty"`
-	ItemContent ItemContentUnion `json:"itemContent"`
+	Typename        TypeName               `json:"__typename"`
+	ClientEventInfo *ClientEventInfo       `json:"clientEventInfo,omitempty"`
+	EntryType       ContentEntryType       `json:"entryType"`
+	FeedbackInfo    map[string]interface{} `json:"feedbackInfo,omitempty"`
+	ItemContent     ItemContentUnion       `json:"itemContent"`
 }
 
 type _TimelineTimelineItem TimelineTimelineItem
@@ -188,7 +188,7 @@ func (o *TimelineTimelineItem) SetItemContent(v ItemContentUnion) {
 }
 
 func (o TimelineTimelineItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -224,10 +224,10 @@ func (o *TimelineTimelineItem) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -283,5 +283,3 @@ func (v *NullableTimelineTimelineItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

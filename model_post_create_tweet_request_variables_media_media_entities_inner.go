@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &PostCreateTweetRequestVariablesMediaMediaEntitiesInner{}
 
 // PostCreateTweetRequestVariablesMediaMediaEntitiesInner struct for PostCreateTweetRequestVariablesMediaMediaEntitiesInner
 type PostCreateTweetRequestVariablesMediaMediaEntitiesInner struct {
-	MediaId string `json:"media_id"`
+	MediaId     string   `json:"media_id"`
 	TaggedUsers []string `json:"tagged_users"`
 }
 
@@ -98,7 +98,7 @@ func (o *PostCreateTweetRequestVariablesMediaMediaEntitiesInner) SetTaggedUsers(
 }
 
 func (o PostCreateTweetRequestVariablesMediaMediaEntitiesInner) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -126,10 +126,10 @@ func (o *PostCreateTweetRequestVariablesMediaMediaEntitiesInner) UnmarshalJSON(d
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -185,5 +185,3 @@ func (v *NullablePostCreateTweetRequestVariablesMediaMediaEntitiesInner) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

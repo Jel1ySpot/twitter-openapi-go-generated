@@ -20,16 +20,15 @@ import (
 	"strings"
 )
 
-
 // TweetAPIService TweetAPI service
 type TweetAPIService service
 
 type ApiGetBookmarksRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetBookmarksRequest) Variables(variables map[string]interface{}) ApiGetBookmarksRequest {
@@ -51,26 +50,27 @@ GetBookmarks Method for GetBookmarks
 
 get bookmarks
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetBookmarksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetBookmarksRequest
 */
 func (a *TweetAPIService) GetBookmarks(ctx context.Context, pathQueryId string) ApiGetBookmarksRequest {
 	return ApiGetBookmarksRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetBookmarks200Response
+//
+//	@return GetBookmarks200Response
 func (a *TweetAPIService) GetBookmarksExecute(r ApiGetBookmarksRequest) (*GetBookmarks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetBookmarks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetBookmarks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetBookmarks")
@@ -400,11 +400,11 @@ func (a *TweetAPIService) GetBookmarksExecute(r ApiGetBookmarksRequest) (*GetBoo
 }
 
 type ApiGetHomeLatestTimelineRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetHomeLatestTimelineRequest) Variables(variables map[string]interface{}) ApiGetHomeLatestTimelineRequest {
@@ -426,26 +426,27 @@ GetHomeLatestTimeline Method for GetHomeLatestTimeline
 
 get tweet list of timeline
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetHomeLatestTimelineRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetHomeLatestTimelineRequest
 */
 func (a *TweetAPIService) GetHomeLatestTimeline(ctx context.Context, pathQueryId string) ApiGetHomeLatestTimelineRequest {
 	return ApiGetHomeLatestTimelineRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetHomeLatestTimeline200Response
+//
+//	@return GetHomeLatestTimeline200Response
 func (a *TweetAPIService) GetHomeLatestTimelineExecute(r ApiGetHomeLatestTimelineRequest) (*GetHomeLatestTimeline200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHomeLatestTimeline200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHomeLatestTimeline200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetHomeLatestTimeline")
@@ -775,11 +776,11 @@ func (a *TweetAPIService) GetHomeLatestTimelineExecute(r ApiGetHomeLatestTimelin
 }
 
 type ApiGetHomeTimelineRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetHomeTimelineRequest) Variables(variables map[string]interface{}) ApiGetHomeTimelineRequest {
@@ -801,26 +802,27 @@ GetHomeTimeline Method for GetHomeTimeline
 
 get tweet list of timeline
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetHomeTimelineRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetHomeTimelineRequest
 */
 func (a *TweetAPIService) GetHomeTimeline(ctx context.Context, pathQueryId string) ApiGetHomeTimelineRequest {
 	return ApiGetHomeTimelineRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetHomeLatestTimeline200Response
+//
+//	@return GetHomeLatestTimeline200Response
 func (a *TweetAPIService) GetHomeTimelineExecute(r ApiGetHomeTimelineRequest) (*GetHomeLatestTimeline200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetHomeLatestTimeline200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetHomeLatestTimeline200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetHomeTimeline")
@@ -1150,11 +1152,11 @@ func (a *TweetAPIService) GetHomeTimelineExecute(r ApiGetHomeTimelineRequest) (*
 }
 
 type ApiGetLikesRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *TweetAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -1182,26 +1184,27 @@ GetLikes Method for GetLikes
 
 get user likes tweets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetLikesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetLikesRequest
 */
 func (a *TweetAPIService) GetLikes(ctx context.Context, pathQueryId string) ApiGetLikesRequest {
 	return ApiGetLikesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetLikes200Response
+//
+//	@return GetLikes200Response
 func (a *TweetAPIService) GetLikesExecute(r ApiGetLikesRequest) (*GetLikes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLikes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLikes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetLikes")
@@ -1535,11 +1538,11 @@ func (a *TweetAPIService) GetLikesExecute(r ApiGetLikesRequest) (*GetLikes200Res
 }
 
 type ApiGetListLatestTweetsTimelineRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetListLatestTweetsTimelineRequest) Variables(variables map[string]interface{}) ApiGetListLatestTweetsTimelineRequest {
@@ -1561,26 +1564,27 @@ GetListLatestTweetsTimeline Method for GetListLatestTweetsTimeline
 
 get tweet list of timeline
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetListLatestTweetsTimelineRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetListLatestTweetsTimelineRequest
 */
 func (a *TweetAPIService) GetListLatestTweetsTimeline(ctx context.Context, pathQueryId string) ApiGetListLatestTweetsTimelineRequest {
 	return ApiGetListLatestTweetsTimelineRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetListLatestTweetsTimeline200Response
+//
+//	@return GetListLatestTweetsTimeline200Response
 func (a *TweetAPIService) GetListLatestTweetsTimelineExecute(r ApiGetListLatestTweetsTimelineRequest) (*GetListLatestTweetsTimeline200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetListLatestTweetsTimeline200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetListLatestTweetsTimeline200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetListLatestTweetsTimeline")
@@ -1910,11 +1914,11 @@ func (a *TweetAPIService) GetListLatestTweetsTimelineExecute(r ApiGetListLatestT
 }
 
 type ApiGetSearchTimelineRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetSearchTimelineRequest) Variables(variables map[string]interface{}) ApiGetSearchTimelineRequest {
@@ -1936,26 +1940,27 @@ GetSearchTimeline Method for GetSearchTimeline
 
 search tweet list. product:[Top, Latest, People, Photos, Videos]
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetSearchTimelineRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetSearchTimelineRequest
 */
 func (a *TweetAPIService) GetSearchTimeline(ctx context.Context, pathQueryId string) ApiGetSearchTimelineRequest {
 	return ApiGetSearchTimelineRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetSearchTimeline200Response
+//
+//	@return GetSearchTimeline200Response
 func (a *TweetAPIService) GetSearchTimelineExecute(r ApiGetSearchTimelineRequest) (*GetSearchTimeline200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetSearchTimeline200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetSearchTimeline200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetSearchTimeline")
@@ -2285,11 +2290,11 @@ func (a *TweetAPIService) GetSearchTimelineExecute(r ApiGetSearchTimelineRequest
 }
 
 type ApiGetTweetDetailRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *TweetAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -2317,26 +2322,27 @@ GetTweetDetail Method for GetTweetDetail
 
 get TweetDetail
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetTweetDetailRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetTweetDetailRequest
 */
 func (a *TweetAPIService) GetTweetDetail(ctx context.Context, pathQueryId string) ApiGetTweetDetailRequest {
 	return ApiGetTweetDetailRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetTweetDetail200Response
+//
+//	@return GetTweetDetail200Response
 func (a *TweetAPIService) GetTweetDetailExecute(r ApiGetTweetDetailRequest) (*GetTweetDetail200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetTweetDetail200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetTweetDetail200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetTweetDetail")
@@ -2670,11 +2676,11 @@ func (a *TweetAPIService) GetTweetDetailExecute(r ApiGetTweetDetailRequest) (*Ge
 }
 
 type ApiGetUserHighlightsTweetsRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
+	ctx         context.Context
+	ApiService  *TweetAPIService
 	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	variables   *map[string]interface{}
+	features    *map[string]interface{}
 }
 
 func (r ApiGetUserHighlightsTweetsRequest) Variables(variables map[string]interface{}) ApiGetUserHighlightsTweetsRequest {
@@ -2696,26 +2702,27 @@ GetUserHighlightsTweets Method for GetUserHighlightsTweets
 
 get user highlights tweets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserHighlightsTweetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserHighlightsTweetsRequest
 */
 func (a *TweetAPIService) GetUserHighlightsTweets(ctx context.Context, pathQueryId string) ApiGetUserHighlightsTweetsRequest {
 	return ApiGetUserHighlightsTweetsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetUserHighlightsTweets200Response
+//
+//	@return GetUserHighlightsTweets200Response
 func (a *TweetAPIService) GetUserHighlightsTweetsExecute(r ApiGetUserHighlightsTweetsRequest) (*GetUserHighlightsTweets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetUserHighlightsTweets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetUserHighlightsTweets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetUserHighlightsTweets")
@@ -3045,11 +3052,11 @@ func (a *TweetAPIService) GetUserHighlightsTweetsExecute(r ApiGetUserHighlightsT
 }
 
 type ApiGetUserMediaRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *TweetAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -3077,26 +3084,27 @@ GetUserMedia Method for GetUserMedia
 
 get user media tweets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserMediaRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserMediaRequest
 */
 func (a *TweetAPIService) GetUserMedia(ctx context.Context, pathQueryId string) ApiGetUserMediaRequest {
 	return ApiGetUserMediaRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetLikes200Response
+//
+//	@return GetLikes200Response
 func (a *TweetAPIService) GetUserMediaExecute(r ApiGetUserMediaRequest) (*GetLikes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLikes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLikes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetUserMedia")
@@ -3430,11 +3438,11 @@ func (a *TweetAPIService) GetUserMediaExecute(r ApiGetUserMediaRequest) (*GetLik
 }
 
 type ApiGetUserTweetsRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *TweetAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -3462,26 +3470,27 @@ GetUserTweets Method for GetUserTweets
 
 get user tweets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserTweetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserTweetsRequest
 */
 func (a *TweetAPIService) GetUserTweets(ctx context.Context, pathQueryId string) ApiGetUserTweetsRequest {
 	return ApiGetUserTweetsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetLikes200Response
+//
+//	@return GetLikes200Response
 func (a *TweetAPIService) GetUserTweetsExecute(r ApiGetUserTweetsRequest) (*GetLikes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLikes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLikes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetUserTweets")
@@ -3815,11 +3824,11 @@ func (a *TweetAPIService) GetUserTweetsExecute(r ApiGetUserTweetsRequest) (*GetL
 }
 
 type ApiGetUserTweetsAndRepliesRequest struct {
-	ctx context.Context
-	ApiService *TweetAPIService
-	pathQueryId string
-	variables *map[string]interface{}
-	features *map[string]interface{}
+	ctx          context.Context
+	ApiService   *TweetAPIService
+	pathQueryId  string
+	variables    *map[string]interface{}
+	features     *map[string]interface{}
 	fieldToggles *map[string]interface{}
 }
 
@@ -3847,26 +3856,27 @@ GetUserTweetsAndReplies Method for GetUserTweetsAndReplies
 
 get user replies tweets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiGetUserTweetsAndRepliesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiGetUserTweetsAndRepliesRequest
 */
 func (a *TweetAPIService) GetUserTweetsAndReplies(ctx context.Context, pathQueryId string) ApiGetUserTweetsAndRepliesRequest {
 	return ApiGetUserTweetsAndRepliesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return GetLikes200Response
+//
+//	@return GetLikes200Response
 func (a *TweetAPIService) GetUserTweetsAndRepliesExecute(r ApiGetUserTweetsAndRepliesRequest) (*GetLikes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GetLikes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GetLikes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TweetAPIService.GetUserTweetsAndReplies")

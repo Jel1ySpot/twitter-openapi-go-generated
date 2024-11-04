@@ -21,11 +21,11 @@ var _ MappedNullable = &TweetEditControl{}
 // TweetEditControl struct for TweetEditControl
 type TweetEditControl struct {
 	EditControlInitial *TweetEditControlInitial `json:"edit_control_initial,omitempty"`
-	EditTweetIds []string `json:"edit_tweet_ids,omitempty"`
-	EditableUntilMsecs *string `json:"editable_until_msecs,omitempty" validate:"regexp=^[0-9]+$"`
-	EditsRemaining *string `json:"edits_remaining,omitempty" validate:"regexp=^[0-9]+$"`
-	InitialTweetId *string `json:"initial_tweet_id,omitempty" validate:"regexp=^[0-9]+$"`
-	IsEditEligible *bool `json:"is_edit_eligible,omitempty"`
+	EditTweetIds       []string                 `json:"edit_tweet_ids,omitempty"`
+	EditableUntilMsecs *string                  `json:"editable_until_msecs,omitempty" validate:"regexp=^[0-9]+$"`
+	EditsRemaining     *string                  `json:"edits_remaining,omitempty" validate:"regexp=^[0-9]+$"`
+	InitialTweetId     *string                  `json:"initial_tweet_id,omitempty" validate:"regexp=^[0-9]+$"`
+	IsEditEligible     *bool                    `json:"is_edit_eligible,omitempty"`
 }
 
 // NewTweetEditControl instantiates a new TweetEditControl object
@@ -238,7 +238,7 @@ func (o *TweetEditControl) SetIsEditEligible(v bool) {
 }
 
 func (o TweetEditControl) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -303,5 +303,3 @@ func (v *NullableTweetEditControl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

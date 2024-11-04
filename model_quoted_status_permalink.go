@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,9 +22,9 @@ var _ MappedNullable = &QuotedStatusPermalink{}
 
 // QuotedStatusPermalink struct for QuotedStatusPermalink
 type QuotedStatusPermalink struct {
-	Display string `json:"display"`
+	Display  string `json:"display"`
 	Expanded string `json:"expanded"`
-	Url string `json:"url"`
+	Url      string `json:"url"`
 }
 
 type _QuotedStatusPermalink QuotedStatusPermalink
@@ -122,7 +122,7 @@ func (o *QuotedStatusPermalink) SetUrl(v string) {
 }
 
 func (o QuotedStatusPermalink) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -152,10 +152,10 @@ func (o *QuotedStatusPermalink) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -211,5 +211,3 @@ func (v *NullableQuotedStatusPermalink) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

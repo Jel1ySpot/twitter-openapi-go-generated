@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,8 +22,8 @@ var _ MappedNullable = &PostCreateTweetRequestVariablesMedia{}
 
 // PostCreateTweetRequestVariablesMedia struct for PostCreateTweetRequestVariablesMedia
 type PostCreateTweetRequestVariablesMedia struct {
-	MediaEntities []PostCreateTweetRequestVariablesMediaMediaEntitiesInner `json:"media_entities,omitempty"`
-	PossiblySensitive bool `json:"possibly_sensitive"`
+	MediaEntities     []PostCreateTweetRequestVariablesMediaMediaEntitiesInner `json:"media_entities,omitempty"`
+	PossiblySensitive bool                                                     `json:"possibly_sensitive"`
 }
 
 type _PostCreateTweetRequestVariablesMedia PostCreateTweetRequestVariablesMedia
@@ -105,7 +105,7 @@ func (o *PostCreateTweetRequestVariablesMedia) SetPossiblySensitive(v bool) {
 }
 
 func (o PostCreateTweetRequestVariablesMedia) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -134,10 +134,10 @@ func (o *PostCreateTweetRequestVariablesMedia) UnmarshalJSON(data []byte) (err e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -193,5 +193,3 @@ func (v *NullablePostCreateTweetRequestVariablesMedia) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

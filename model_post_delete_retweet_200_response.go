@@ -13,14 +13,14 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // PostDeleteRetweet200Response - struct for PostDeleteRetweet200Response
 type PostDeleteRetweet200Response struct {
 	DeleteRetweetResponse *DeleteRetweetResponse
-	Errors *Errors
+	Errors                *Errors
 }
 
 // DeleteRetweetResponseAsPostDeleteRetweet200Response is a convenience function that returns DeleteRetweetResponse wrapped in PostDeleteRetweet200Response
@@ -36,7 +36,6 @@ func ErrorsAsPostDeleteRetweet200Response(v *Errors) PostDeleteRetweet200Respons
 		Errors: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *PostDeleteRetweet200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src PostDeleteRetweet200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *PostDeleteRetweet200Response) GetActualInstance() (interface{}) {
+func (obj *PostDeleteRetweet200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullablePostDeleteRetweet200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

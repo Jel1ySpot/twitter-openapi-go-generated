@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,8 +22,8 @@ var _ MappedNullable = &ModuleItem{}
 
 // ModuleItem struct for ModuleItem
 type ModuleItem struct {
-	EntryId string `json:"entryId" validate:"regexp=^(([a-z]+|[0-9]+|[0-9a-f]+)(-|$))+"`
-	Item ModuleEntry `json:"item"`
+	EntryId string      `json:"entryId" validate:"regexp=^(([a-z]+|[0-9]+|[0-9a-f]+)(-|$))+"`
+	Item    ModuleEntry `json:"item"`
 }
 
 type _ModuleItem ModuleItem
@@ -96,7 +96,7 @@ func (o *ModuleItem) SetItem(v ModuleEntry) {
 }
 
 func (o ModuleItem) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -124,10 +124,10 @@ func (o *ModuleItem) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -183,5 +183,3 @@ func (v *NullableModuleItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

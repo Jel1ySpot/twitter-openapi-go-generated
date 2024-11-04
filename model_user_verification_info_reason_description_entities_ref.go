@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &UserVerificationInfoReasonDescriptionEntitiesRef{}
 
 // UserVerificationInfoReasonDescriptionEntitiesRef struct for UserVerificationInfoReasonDescriptionEntitiesRef
 type UserVerificationInfoReasonDescriptionEntitiesRef struct {
-	Url string `json:"url"`
+	Url     string `json:"url"`
 	UrlType string `json:"url_type"`
 }
 
@@ -96,7 +96,7 @@ func (o *UserVerificationInfoReasonDescriptionEntitiesRef) SetUrlType(v string) 
 }
 
 func (o UserVerificationInfoReasonDescriptionEntitiesRef) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -124,10 +124,10 @@ func (o *UserVerificationInfoReasonDescriptionEntitiesRef) UnmarshalJSON(data []
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -183,5 +183,3 @@ func (v *NullableUserVerificationInfoReasonDescriptionEntitiesRef) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

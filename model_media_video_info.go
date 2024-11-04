@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,9 +22,9 @@ var _ MappedNullable = &MediaVideoInfo{}
 
 // MediaVideoInfo struct for MediaVideoInfo
 type MediaVideoInfo struct {
-	AspectRatio []int32 `json:"aspect_ratio"`
-	DurationMillis *int32 `json:"duration_millis,omitempty"`
-	Variants []MediaVideoInfoVariant `json:"variants"`
+	AspectRatio    []int32                 `json:"aspect_ratio"`
+	DurationMillis *int32                  `json:"duration_millis,omitempty"`
+	Variants       []MediaVideoInfoVariant `json:"variants"`
 }
 
 type _MediaVideoInfo MediaVideoInfo
@@ -129,7 +129,7 @@ func (o *MediaVideoInfo) SetVariants(v []MediaVideoInfoVariant) {
 }
 
 func (o MediaVideoInfo) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -160,10 +160,10 @@ func (o *MediaVideoInfo) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -219,5 +219,3 @@ func (v *NullableMediaVideoInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // PostAPIService PostAPI service
 type PostAPIService service
 
 type ApiPostCreateBookmarkRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                       context.Context
+	ApiService                *PostAPIService
+	pathQueryId               string
 	postCreateBookmarkRequest *PostCreateBookmarkRequest
 }
 
@@ -46,26 +45,27 @@ PostCreateBookmark Method for PostCreateBookmark
 
 create Bookmark
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostCreateBookmarkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostCreateBookmarkRequest
 */
 func (a *PostAPIService) PostCreateBookmark(ctx context.Context, pathQueryId string) ApiPostCreateBookmarkRequest {
 	return ApiPostCreateBookmarkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostCreateBookmark200Response
+//
+//	@return PostCreateBookmark200Response
 func (a *PostAPIService) PostCreateBookmarkExecute(r ApiPostCreateBookmarkRequest) (*PostCreateBookmark200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostCreateBookmark200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostCreateBookmark200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostCreateBookmark")
@@ -392,9 +392,9 @@ func (a *PostAPIService) PostCreateBookmarkExecute(r ApiPostCreateBookmarkReques
 }
 
 type ApiPostCreateRetweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                      context.Context
+	ApiService               *PostAPIService
+	pathQueryId              string
 	postCreateRetweetRequest *PostCreateRetweetRequest
 }
 
@@ -413,26 +413,27 @@ PostCreateRetweet Method for PostCreateRetweet
 
 create Retweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostCreateRetweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostCreateRetweetRequest
 */
 func (a *PostAPIService) PostCreateRetweet(ctx context.Context, pathQueryId string) ApiPostCreateRetweetRequest {
 	return ApiPostCreateRetweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostCreateRetweet200Response
+//
+//	@return PostCreateRetweet200Response
 func (a *PostAPIService) PostCreateRetweetExecute(r ApiPostCreateRetweetRequest) (*PostCreateRetweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostCreateRetweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostCreateRetweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostCreateRetweet")
@@ -759,9 +760,9 @@ func (a *PostAPIService) PostCreateRetweetExecute(r ApiPostCreateRetweetRequest)
 }
 
 type ApiPostCreateTweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                    context.Context
+	ApiService             *PostAPIService
+	pathQueryId            string
 	postCreateTweetRequest *PostCreateTweetRequest
 }
 
@@ -780,26 +781,27 @@ PostCreateTweet Method for PostCreateTweet
 
 create Tweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostCreateTweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostCreateTweetRequest
 */
 func (a *PostAPIService) PostCreateTweet(ctx context.Context, pathQueryId string) ApiPostCreateTweetRequest {
 	return ApiPostCreateTweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostCreateTweet200Response
+//
+//	@return PostCreateTweet200Response
 func (a *PostAPIService) PostCreateTweetExecute(r ApiPostCreateTweetRequest) (*PostCreateTweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostCreateTweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostCreateTweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostCreateTweet")
@@ -1126,9 +1128,9 @@ func (a *PostAPIService) PostCreateTweetExecute(r ApiPostCreateTweetRequest) (*P
 }
 
 type ApiPostDeleteBookmarkRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                       context.Context
+	ApiService                *PostAPIService
+	pathQueryId               string
 	postDeleteBookmarkRequest *PostDeleteBookmarkRequest
 }
 
@@ -1147,26 +1149,27 @@ PostDeleteBookmark Method for PostDeleteBookmark
 
 delete Bookmark
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostDeleteBookmarkRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostDeleteBookmarkRequest
 */
 func (a *PostAPIService) PostDeleteBookmark(ctx context.Context, pathQueryId string) ApiPostDeleteBookmarkRequest {
 	return ApiPostDeleteBookmarkRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostDeleteBookmark200Response
+//
+//	@return PostDeleteBookmark200Response
 func (a *PostAPIService) PostDeleteBookmarkExecute(r ApiPostDeleteBookmarkRequest) (*PostDeleteBookmark200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostDeleteBookmark200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostDeleteBookmark200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostDeleteBookmark")
@@ -1493,9 +1496,9 @@ func (a *PostAPIService) PostDeleteBookmarkExecute(r ApiPostDeleteBookmarkReques
 }
 
 type ApiPostDeleteRetweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                      context.Context
+	ApiService               *PostAPIService
+	pathQueryId              string
 	postDeleteRetweetRequest *PostDeleteRetweetRequest
 }
 
@@ -1514,26 +1517,27 @@ PostDeleteRetweet Method for PostDeleteRetweet
 
 delete Retweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostDeleteRetweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostDeleteRetweetRequest
 */
 func (a *PostAPIService) PostDeleteRetweet(ctx context.Context, pathQueryId string) ApiPostDeleteRetweetRequest {
 	return ApiPostDeleteRetweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostDeleteRetweet200Response
+//
+//	@return PostDeleteRetweet200Response
 func (a *PostAPIService) PostDeleteRetweetExecute(r ApiPostDeleteRetweetRequest) (*PostDeleteRetweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostDeleteRetweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostDeleteRetweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostDeleteRetweet")
@@ -1860,9 +1864,9 @@ func (a *PostAPIService) PostDeleteRetweetExecute(r ApiPostDeleteRetweetRequest)
 }
 
 type ApiPostDeleteTweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                    context.Context
+	ApiService             *PostAPIService
+	pathQueryId            string
 	postDeleteTweetRequest *PostDeleteTweetRequest
 }
 
@@ -1881,26 +1885,27 @@ PostDeleteTweet Method for PostDeleteTweet
 
 delete Retweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostDeleteTweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostDeleteTweetRequest
 */
 func (a *PostAPIService) PostDeleteTweet(ctx context.Context, pathQueryId string) ApiPostDeleteTweetRequest {
 	return ApiPostDeleteTweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostDeleteTweet200Response
+//
+//	@return PostDeleteTweet200Response
 func (a *PostAPIService) PostDeleteTweetExecute(r ApiPostDeleteTweetRequest) (*PostDeleteTweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostDeleteTweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostDeleteTweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostDeleteTweet")
@@ -2227,9 +2232,9 @@ func (a *PostAPIService) PostDeleteTweetExecute(r ApiPostDeleteTweetRequest) (*P
 }
 
 type ApiPostFavoriteTweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                      context.Context
+	ApiService               *PostAPIService
+	pathQueryId              string
 	postFavoriteTweetRequest *PostFavoriteTweetRequest
 }
 
@@ -2248,26 +2253,27 @@ PostFavoriteTweet Method for PostFavoriteTweet
 
 favorite Tweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostFavoriteTweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostFavoriteTweetRequest
 */
 func (a *PostAPIService) PostFavoriteTweet(ctx context.Context, pathQueryId string) ApiPostFavoriteTweetRequest {
 	return ApiPostFavoriteTweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostFavoriteTweet200Response
+//
+//	@return PostFavoriteTweet200Response
 func (a *PostAPIService) PostFavoriteTweetExecute(r ApiPostFavoriteTweetRequest) (*PostFavoriteTweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostFavoriteTweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostFavoriteTweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostFavoriteTweet")
@@ -2594,9 +2600,9 @@ func (a *PostAPIService) PostFavoriteTweetExecute(r ApiPostFavoriteTweetRequest)
 }
 
 type ApiPostUnfavoriteTweetRequest struct {
-	ctx context.Context
-	ApiService *PostAPIService
-	pathQueryId string
+	ctx                        context.Context
+	ApiService                 *PostAPIService
+	pathQueryId                string
 	postUnfavoriteTweetRequest *PostUnfavoriteTweetRequest
 }
 
@@ -2615,26 +2621,27 @@ PostUnfavoriteTweet Method for PostUnfavoriteTweet
 
 unfavorite Tweet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param pathQueryId
- @return ApiPostUnfavoriteTweetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param pathQueryId
+	@return ApiPostUnfavoriteTweetRequest
 */
 func (a *PostAPIService) PostUnfavoriteTweet(ctx context.Context, pathQueryId string) ApiPostUnfavoriteTweetRequest {
 	return ApiPostUnfavoriteTweetRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		pathQueryId: pathQueryId,
 	}
 }
 
 // Execute executes the request
-//  @return PostUnfavoriteTweet200Response
+//
+//	@return PostUnfavoriteTweet200Response
 func (a *PostAPIService) PostUnfavoriteTweetExecute(r ApiPostUnfavoriteTweetRequest) (*PostUnfavoriteTweet200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PostUnfavoriteTweet200Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PostUnfavoriteTweet200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PostAPIService.PostUnfavoriteTweet")

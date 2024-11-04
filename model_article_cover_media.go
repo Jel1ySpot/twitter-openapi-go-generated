@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,10 +22,10 @@ var _ MappedNullable = &ArticleCoverMedia{}
 
 // ArticleCoverMedia struct for ArticleCoverMedia
 type ArticleCoverMedia struct {
-	Id string `json:"id"`
-	MediaId string `json:"media_id" validate:"regexp=^[0-9]+$"`
+	Id        string                `json:"id"`
+	MediaId   string                `json:"media_id" validate:"regexp=^[0-9]+$"`
 	MediaInfo ArticleCoverMediaInfo `json:"media_info"`
-	MediaKey string `json:"media_key"`
+	MediaKey  string                `json:"media_key"`
 }
 
 type _ArticleCoverMedia ArticleCoverMedia
@@ -148,7 +148,7 @@ func (o *ArticleCoverMedia) SetMediaKey(v string) {
 }
 
 func (o ArticleCoverMedia) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -180,10 +180,10 @@ func (o *ArticleCoverMedia) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -239,5 +239,3 @@ func (v *NullableArticleCoverMedia) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,20 +22,20 @@ var _ MappedNullable = &Session{}
 
 // Session struct for Session
 type Session struct {
-	SsoInitTokens map[string]interface{} `json:"SsoInitTokens,omitempty"`
-	CommunitiesActions CommunitiesActions `json:"communitiesActions"`
-	Country string `json:"country" validate:"regexp=^[A-Z]{2}$"`
-	GuestId string `json:"guestId" validate:"regexp=^[0-9]+$"`
-	HasCommunityMemberships bool `json:"hasCommunityMemberships"`
-	IsActiveCreator bool `json:"isActiveCreator"`
-	IsRestrictedSession bool `json:"isRestrictedSession"`
-	IsSuperFollowSubscriber bool `json:"isSuperFollowSubscriber"`
-	Language string `json:"language" validate:"regexp=^[a-z]{2}$"`
-	OneFactorLoginEligibility OneFactorLoginEligibility `json:"oneFactorLoginEligibility"`
-	SuperFollowersCount int32 `json:"superFollowersCount"`
-	SuperFollowsApplicationStatus string `json:"superFollowsApplicationStatus"`
-	UserFeatures UserFeatures `json:"userFeatures"`
-	UserId string `json:"user_id" validate:"regexp=^[0-9]+$"`
+	SsoInitTokens                 map[string]interface{}    `json:"SsoInitTokens,omitempty"`
+	CommunitiesActions            CommunitiesActions        `json:"communitiesActions"`
+	Country                       string                    `json:"country" validate:"regexp=^[A-Z]{2}$"`
+	GuestId                       string                    `json:"guestId" validate:"regexp=^[0-9]+$"`
+	HasCommunityMemberships       bool                      `json:"hasCommunityMemberships"`
+	IsActiveCreator               bool                      `json:"isActiveCreator"`
+	IsRestrictedSession           bool                      `json:"isRestrictedSession"`
+	IsSuperFollowSubscriber       bool                      `json:"isSuperFollowSubscriber"`
+	Language                      string                    `json:"language" validate:"regexp=^[a-z]{2}$"`
+	OneFactorLoginEligibility     OneFactorLoginEligibility `json:"oneFactorLoginEligibility"`
+	SuperFollowersCount           int32                     `json:"superFollowersCount"`
+	SuperFollowsApplicationStatus string                    `json:"superFollowsApplicationStatus"`
+	UserFeatures                  UserFeatures              `json:"userFeatures"`
+	UserId                        string                    `json:"user_id" validate:"regexp=^[0-9]+$"`
 }
 
 type _Session Session
@@ -415,7 +415,7 @@ func (o *Session) SetUserId(v string) {
 }
 
 func (o Session) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -468,10 +468,10 @@ func (o *Session) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -527,5 +527,3 @@ func (v *NullableSession) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

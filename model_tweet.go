@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,30 +22,30 @@ var _ MappedNullable = &Tweet{}
 
 // Tweet struct for Tweet
 type Tweet struct {
-	Typename *TypeName `json:"__typename,omitempty"`
-	Article *Article `json:"article,omitempty"`
+	Typename                    *TypeName                    `json:"__typename,omitempty"`
+	Article                     *Article                     `json:"article,omitempty"`
 	AuthorCommunityRelationship *AuthorCommunityRelationship `json:"author_community_relationship,omitempty"`
-	BirdwatchPivot *BirdwatchPivot `json:"birdwatch_pivot,omitempty"`
-	Card *TweetCard `json:"card,omitempty"`
-	CommunityRelationship *CommunityRelationship `json:"community_relationship,omitempty"`
-	CommunityResults *Community `json:"community_results,omitempty"`
-	Core *UserResultCore `json:"core,omitempty"`
-	EditControl *TweetEditControl `json:"edit_control,omitempty"`
-	EditPrespective *TweetEditPrespective `json:"edit_prespective,omitempty"`
-	HasBirdwatchNotes *bool `json:"has_birdwatch_notes,omitempty"`
-	IsTranslatable *bool `json:"is_translatable,omitempty"`
-	Legacy *TweetLegacy `json:"legacy,omitempty"`
-	NoteTweet *NoteTweet `json:"note_tweet,omitempty"`
-	PreviousCounts *TweetPreviousCounts `json:"previous_counts,omitempty"`
-	QuickPromoteEligibility map[string]interface{} `json:"quick_promote_eligibility,omitempty"`
-	QuotedRefResult *QuotedRefResult `json:"quotedRefResult,omitempty"`
-	QuotedStatusResult *ItemResult `json:"quoted_status_result,omitempty"`
-	RestId string `json:"rest_id" validate:"regexp=^[0-9]+$"`
-	Source *string `json:"source,omitempty"`
+	BirdwatchPivot              *BirdwatchPivot              `json:"birdwatch_pivot,omitempty"`
+	Card                        *TweetCard                   `json:"card,omitempty"`
+	CommunityRelationship       *CommunityRelationship       `json:"community_relationship,omitempty"`
+	CommunityResults            *Community                   `json:"community_results,omitempty"`
+	Core                        *UserResultCore              `json:"core,omitempty"`
+	EditControl                 *TweetEditControl            `json:"edit_control,omitempty"`
+	EditPrespective             *TweetEditPrespective        `json:"edit_prespective,omitempty"`
+	HasBirdwatchNotes           *bool                        `json:"has_birdwatch_notes,omitempty"`
+	IsTranslatable              *bool                        `json:"is_translatable,omitempty"`
+	Legacy                      *TweetLegacy                 `json:"legacy,omitempty"`
+	NoteTweet                   *NoteTweet                   `json:"note_tweet,omitempty"`
+	PreviousCounts              *TweetPreviousCounts         `json:"previous_counts,omitempty"`
+	QuickPromoteEligibility     map[string]interface{}       `json:"quick_promote_eligibility,omitempty"`
+	QuotedRefResult             *QuotedRefResult             `json:"quotedRefResult,omitempty"`
+	QuotedStatusResult          *ItemResult                  `json:"quoted_status_result,omitempty"`
+	RestId                      string                       `json:"rest_id" validate:"regexp=^[0-9]+$"`
+	Source                      *string                      `json:"source,omitempty"`
 	SuperFollowsReplyUserResult *SuperFollowsReplyUserResult `json:"superFollowsReplyUserResult,omitempty"`
-	UnifiedCard *UnifiedCard `json:"unified_card,omitempty"`
-	UnmentionData map[string]interface{} `json:"unmention_data,omitempty"`
-	Views *TweetView `json:"views,omitempty"`
+	UnifiedCard                 *UnifiedCard                 `json:"unified_card,omitempty"`
+	UnmentionData               map[string]interface{}       `json:"unmention_data,omitempty"`
+	Views                       *TweetView                   `json:"views,omitempty"`
 }
 
 type _Tweet Tweet
@@ -829,7 +829,7 @@ func (o *Tweet) SetViews(v TweetView) {
 }
 
 func (o Tweet) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -924,10 +924,10 @@ func (o *Tweet) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -983,5 +983,3 @@ func (v *NullableTweet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

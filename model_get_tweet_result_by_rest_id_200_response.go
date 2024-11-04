@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetTweetResultByRestId200Response - struct for GetTweetResultByRestId200Response
 type GetTweetResultByRestId200Response struct {
-	Errors *Errors
+	Errors                      *Errors
 	TweetResultByRestIdResponse *TweetResultByRestIdResponse
 }
 
@@ -36,7 +36,6 @@ func TweetResultByRestIdResponseAsGetTweetResultByRestId200Response(v *TweetResu
 		TweetResultByRestIdResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetTweetResultByRestId200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetTweetResultByRestId200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetTweetResultByRestId200Response) GetActualInstance() (interface{}) {
+func (obj *GetTweetResultByRestId200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetTweetResultByRestId200Response) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

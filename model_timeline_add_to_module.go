@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,10 +22,10 @@ var _ MappedNullable = &TimelineAddToModule{}
 
 // TimelineAddToModule struct for TimelineAddToModule
 type TimelineAddToModule struct {
-	ModuleEntryId string `json:"moduleEntryId"`
-	ModuleItems []ModuleItem `json:"moduleItems"`
-	Prepend *bool `json:"prepend,omitempty"`
-	Type InstructionType `json:"type"`
+	ModuleEntryId string          `json:"moduleEntryId"`
+	ModuleItems   []ModuleItem    `json:"moduleItems"`
+	Prepend       *bool           `json:"prepend,omitempty"`
+	Type          InstructionType `json:"type"`
 }
 
 type _TimelineAddToModule TimelineAddToModule
@@ -155,7 +155,7 @@ func (o *TimelineAddToModule) SetType(v InstructionType) {
 }
 
 func (o TimelineAddToModule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -188,10 +188,10 @@ func (o *TimelineAddToModule) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -247,5 +247,3 @@ func (v *NullableTimelineAddToModule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -21,12 +21,12 @@ type ContentItemType string
 
 // List of ContentItemType
 const (
-	TIMELINE_TWEET ContentItemType = "TimelineTweet"
+	TIMELINE_TWEET           ContentItemType = "TimelineTweet"
 	TIMELINE_TIMELINE_CURSOR ContentItemType = "TimelineTimelineCursor"
-	TIMELINE_USER ContentItemType = "TimelineUser"
-	TIMELINE_PROMPT ContentItemType = "TimelinePrompt"
-	TIMELINE_MESSAGE_PROMPT ContentItemType = "TimelineMessagePrompt"
-	TIMELINE_COMMUNITY ContentItemType = "TimelineCommunity"
+	TIMELINE_USER            ContentItemType = "TimelineUser"
+	TIMELINE_PROMPT          ContentItemType = "TimelinePrompt"
+	TIMELINE_MESSAGE_PROMPT  ContentItemType = "TimelineMessagePrompt"
+	TIMELINE_COMMUNITY       ContentItemType = "TimelineCommunity"
 )
 
 // All allowed values of ContentItemType enum
@@ -117,4 +117,3 @@ func (v *NullableContentItemType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

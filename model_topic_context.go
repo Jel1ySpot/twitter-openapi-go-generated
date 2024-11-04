@@ -20,13 +20,13 @@ var _ MappedNullable = &TopicContext{}
 
 // TopicContext struct for TopicContext
 type TopicContext struct {
-	Description *string `json:"description,omitempty"`
-	Following *bool `json:"following,omitempty"`
-	IconUrl *string `json:"icon_url,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	NotInterested *bool `json:"not_interested,omitempty"`
-	TopicId *string `json:"topic_id,omitempty"`
+	Description   *string `json:"description,omitempty"`
+	Following     *bool   `json:"following,omitempty"`
+	IconUrl       *string `json:"icon_url,omitempty"`
+	Id            *string `json:"id,omitempty"`
+	Name          *string `json:"name,omitempty"`
+	NotInterested *bool   `json:"not_interested,omitempty"`
+	TopicId       *string `json:"topic_id,omitempty"`
 }
 
 // NewTopicContext instantiates a new TopicContext object
@@ -271,7 +271,7 @@ func (o *TopicContext) SetTopicId(v string) {
 }
 
 func (o TopicContext) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -339,5 +339,3 @@ func (v *NullableTopicContext) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -23,7 +23,7 @@ var _ MappedNullable = &PostCreateTweetRequestVariablesReply{}
 // PostCreateTweetRequestVariablesReply struct for PostCreateTweetRequestVariablesReply
 type PostCreateTweetRequestVariablesReply struct {
 	ExcludeReplyUserIds []map[string]interface{} `json:"exclude_reply_user_ids"`
-	InReplyToTweetId string `json:"in_reply_to_tweet_id"`
+	InReplyToTweetId    string                   `json:"in_reply_to_tweet_id"`
 }
 
 type _PostCreateTweetRequestVariablesReply PostCreateTweetRequestVariablesReply
@@ -98,7 +98,7 @@ func (o *PostCreateTweetRequestVariablesReply) SetInReplyToTweetId(v string) {
 }
 
 func (o PostCreateTweetRequestVariablesReply) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -126,10 +126,10 @@ func (o *PostCreateTweetRequestVariablesReply) UnmarshalJSON(data []byte) (err e
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -185,5 +185,3 @@ func (v *NullablePostCreateTweetRequestVariablesReply) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

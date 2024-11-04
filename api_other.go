@@ -19,12 +19,11 @@ import (
 	"net/url"
 )
 
-
 // OtherAPIService OtherAPI service
 type OtherAPIService service
 
 type ApiOtherRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OtherAPIService
 }
 
@@ -37,24 +36,25 @@ Other Method for Other
 
 This is not an actual endpoint
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiOtherRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiOtherRequest
 */
 func (a *OtherAPIService) Other(ctx context.Context) ApiOtherRequest {
 	return ApiOtherRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return OtherResponse
+//
+//	@return OtherResponse
 func (a *OtherAPIService) OtherExecute(r ApiOtherRequest) (*OtherResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *OtherResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *OtherResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OtherAPIService.Other")

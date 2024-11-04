@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetFollowers200Response - struct for GetFollowers200Response
 type GetFollowers200Response struct {
-	Errors *Errors
+	Errors         *Errors
 	FollowResponse *FollowResponse
 }
 
@@ -36,7 +36,6 @@ func FollowResponseAsGetFollowers200Response(v *FollowResponse) GetFollowers200R
 		FollowResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetFollowers200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetFollowers200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetFollowers200Response) GetActualInstance() (interface{}) {
+func (obj *GetFollowers200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetFollowers200Response) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

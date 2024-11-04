@@ -21,7 +21,7 @@ var _ MappedNullable = &TweetUnavailable{}
 // TweetUnavailable struct for TweetUnavailable
 type TweetUnavailable struct {
 	Typename *TypeName `json:"__typename,omitempty"`
-	Reason *string `json:"reason,omitempty"`
+	Reason   *string   `json:"reason,omitempty"`
 }
 
 // NewTweetUnavailable instantiates a new TweetUnavailable object
@@ -106,7 +106,7 @@ func (o *TweetUnavailable) SetReason(v string) {
 }
 
 func (o TweetUnavailable) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableTweetUnavailable) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

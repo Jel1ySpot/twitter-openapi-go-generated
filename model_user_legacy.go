@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,47 +22,47 @@ var _ MappedNullable = &UserLegacy{}
 
 // UserLegacy struct for UserLegacy
 type UserLegacy struct {
-	BlockedBy *bool `json:"blocked_by,omitempty"`
-	Blocking *bool `json:"blocking,omitempty"`
-	CanDm *bool `json:"can_dm,omitempty"`
-	CanMediaTag *bool `json:"can_media_tag,omitempty"`
-	CreatedAt string `json:"created_at" validate:"regexp=^(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (0[1-9]|[12][0-9]|3[01]) (0[0-9]|1[0-9]|2[0-3])(: ?)([0-5][0-9])(: ?)([0-5][0-9]) ([+-][0-9]{4}) ([0-9]{4})$"`
-	DefaultProfile bool `json:"default_profile"`
-	DefaultProfileImage bool `json:"default_profile_image"`
-	Description string `json:"description"`
-	Entities map[string]interface{} `json:"entities"`
-	FastFollowersCount int32 `json:"fast_followers_count"`
-	FavouritesCount int32 `json:"favourites_count"`
-	FollowRequestSent *bool `json:"follow_request_sent,omitempty"`
-	FollowedBy *bool `json:"followed_by,omitempty"`
-	FollowersCount int32 `json:"followers_count"`
-	Following *bool `json:"following,omitempty"`
-	FriendsCount int32 `json:"friends_count"`
-	HasCustomTimelines bool `json:"has_custom_timelines"`
-	IsTranslator bool `json:"is_translator"`
-	ListedCount int32 `json:"listed_count"`
-	Location string `json:"location"`
-	MediaCount int32 `json:"media_count"`
-	Muting *bool `json:"muting,omitempty"`
-	Name string `json:"name"`
-	NormalFollowersCount int32 `json:"normal_followers_count"`
-	Notifications *bool `json:"notifications,omitempty"`
-	PinnedTweetIdsStr []string `json:"pinned_tweet_ids_str"`
-	PossiblySensitive bool `json:"possibly_sensitive"`
+	BlockedBy               *bool                  `json:"blocked_by,omitempty"`
+	Blocking                *bool                  `json:"blocking,omitempty"`
+	CanDm                   *bool                  `json:"can_dm,omitempty"`
+	CanMediaTag             *bool                  `json:"can_media_tag,omitempty"`
+	CreatedAt               string                 `json:"created_at" validate:"regexp=^(Sun|Mon|Tue|Wed|Thu|Fri|Sat) (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) (0[1-9]|[12][0-9]|3[01]) (0[0-9]|1[0-9]|2[0-3])(: ?)([0-5][0-9])(: ?)([0-5][0-9]) ([+-][0-9]{4}) ([0-9]{4})$"`
+	DefaultProfile          bool                   `json:"default_profile"`
+	DefaultProfileImage     bool                   `json:"default_profile_image"`
+	Description             string                 `json:"description"`
+	Entities                map[string]interface{} `json:"entities"`
+	FastFollowersCount      int32                  `json:"fast_followers_count"`
+	FavouritesCount         int32                  `json:"favourites_count"`
+	FollowRequestSent       *bool                  `json:"follow_request_sent,omitempty"`
+	FollowedBy              *bool                  `json:"followed_by,omitempty"`
+	FollowersCount          int32                  `json:"followers_count"`
+	Following               *bool                  `json:"following,omitempty"`
+	FriendsCount            int32                  `json:"friends_count"`
+	HasCustomTimelines      bool                   `json:"has_custom_timelines"`
+	IsTranslator            bool                   `json:"is_translator"`
+	ListedCount             int32                  `json:"listed_count"`
+	Location                string                 `json:"location"`
+	MediaCount              int32                  `json:"media_count"`
+	Muting                  *bool                  `json:"muting,omitempty"`
+	Name                    string                 `json:"name"`
+	NormalFollowersCount    int32                  `json:"normal_followers_count"`
+	Notifications           *bool                  `json:"notifications,omitempty"`
+	PinnedTweetIdsStr       []string               `json:"pinned_tweet_ids_str"`
+	PossiblySensitive       bool                   `json:"possibly_sensitive"`
 	ProfileBannerExtensions map[string]interface{} `json:"profile_banner_extensions,omitempty"`
-	ProfileBannerUrl *string `json:"profile_banner_url,omitempty"`
-	ProfileImageExtensions map[string]interface{} `json:"profile_image_extensions,omitempty"`
-	ProfileImageUrlHttps string `json:"profile_image_url_https"`
-	ProfileInterstitialType string `json:"profile_interstitial_type"`
-	Protected *bool `json:"protected,omitempty"`
-	ScreenName string `json:"screen_name"`
-	StatusesCount int32 `json:"statuses_count"`
-	TranslatorType string `json:"translator_type"`
-	Url *string `json:"url,omitempty"`
-	Verified bool `json:"verified"`
-	VerifiedType *string `json:"verified_type,omitempty"`
-	WantRetweets *bool `json:"want_retweets,omitempty"`
-	WithheldInCountries []string `json:"withheld_in_countries,omitempty"`
+	ProfileBannerUrl        *string                `json:"profile_banner_url,omitempty"`
+	ProfileImageExtensions  map[string]interface{} `json:"profile_image_extensions,omitempty"`
+	ProfileImageUrlHttps    string                 `json:"profile_image_url_https"`
+	ProfileInterstitialType string                 `json:"profile_interstitial_type"`
+	Protected               *bool                  `json:"protected,omitempty"`
+	ScreenName              string                 `json:"screen_name"`
+	StatusesCount           int32                  `json:"statuses_count"`
+	TranslatorType          string                 `json:"translator_type"`
+	Url                     *string                `json:"url,omitempty"`
+	Verified                bool                   `json:"verified"`
+	VerifiedType            *string                `json:"verified_type,omitempty"`
+	WantRetweets            *bool                  `json:"want_retweets,omitempty"`
+	WithheldInCountries     []string               `json:"withheld_in_countries,omitempty"`
 }
 
 type _UserLegacy UserLegacy
@@ -1229,7 +1229,7 @@ func (o *UserLegacy) SetWithheldInCountries(v []string) {
 }
 
 func (o UserLegacy) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1352,10 +1352,10 @@ func (o *UserLegacy) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -1411,5 +1411,3 @@ func (v *NullableUserLegacy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

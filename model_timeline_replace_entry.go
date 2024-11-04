@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,9 +22,9 @@ var _ MappedNullable = &TimelineReplaceEntry{}
 
 // TimelineReplaceEntry struct for TimelineReplaceEntry
 type TimelineReplaceEntry struct {
-	Entry TimelineAddEntry `json:"entry"`
-	EntryIdToReplace string `json:"entry_id_to_replace"`
-	Type InstructionType `json:"type"`
+	Entry            TimelineAddEntry `json:"entry"`
+	EntryIdToReplace string           `json:"entry_id_to_replace"`
+	Type             InstructionType  `json:"type"`
 }
 
 type _TimelineReplaceEntry TimelineReplaceEntry
@@ -122,7 +122,7 @@ func (o *TimelineReplaceEntry) SetType(v InstructionType) {
 }
 
 func (o TimelineReplaceEntry) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -152,10 +152,10 @@ func (o *TimelineReplaceEntry) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -211,5 +211,3 @@ func (v *NullableTimelineReplaceEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

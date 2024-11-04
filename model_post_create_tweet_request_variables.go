@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,14 +22,14 @@ var _ MappedNullable = &PostCreateTweetRequestVariables{}
 
 // PostCreateTweetRequestVariables struct for PostCreateTweetRequestVariables
 type PostCreateTweetRequestVariables struct {
-	AttachmentUrl *string `json:"attachment_url,omitempty"`
-	ConversationControl *PostCreateTweetRequestVariablesConversationControl `json:"conversation_control,omitempty"`
-	DarkRequest bool `json:"dark_request"`
-	DisallowedReplyOptions map[string]interface{} `json:"disallowed_reply_options,omitempty"`
-	Media PostCreateTweetRequestVariablesMedia `json:"media"`
-	Reply *PostCreateTweetRequestVariablesReply `json:"reply,omitempty"`
-	SemanticAnnotationIds []map[string]interface{} `json:"semantic_annotation_ids"`
-	TweetText string `json:"tweet_text"`
+	AttachmentUrl          *string                                             `json:"attachment_url,omitempty"`
+	ConversationControl    *PostCreateTweetRequestVariablesConversationControl `json:"conversation_control,omitempty"`
+	DarkRequest            bool                                                `json:"dark_request"`
+	DisallowedReplyOptions map[string]interface{}                              `json:"disallowed_reply_options,omitempty"`
+	Media                  PostCreateTweetRequestVariablesMedia                `json:"media"`
+	Reply                  *PostCreateTweetRequestVariablesReply               `json:"reply,omitempty"`
+	SemanticAnnotationIds  []map[string]interface{}                            `json:"semantic_annotation_ids"`
+	TweetText              string                                              `json:"tweet_text"`
 }
 
 type _PostCreateTweetRequestVariables PostCreateTweetRequestVariables
@@ -288,7 +288,7 @@ func (o *PostCreateTweetRequestVariables) SetTweetText(v string) {
 }
 
 func (o PostCreateTweetRequestVariables) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -332,10 +332,10 @@ func (o *PostCreateTweetRequestVariables) UnmarshalJSON(data []byte) (err error)
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -391,5 +391,3 @@ func (v *NullablePostCreateTweetRequestVariables) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

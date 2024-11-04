@@ -19,30 +19,29 @@ import (
 	"net/url"
 )
 
-
 // V11GetAPIService V11GetAPI service
 type V11GetAPIService service
 
 type ApiGetFriendsFollowingListRequest struct {
-	ctx context.Context
-	ApiService *V11GetAPIService
+	ctx                            context.Context
+	ApiService                     *V11GetAPIService
 	includeProfileInterstitialType *int32
-	includeBlocking *int32
-	includeBlockedBy *int32
-	includeFollowedBy *int32
-	includeWantRetweets *int32
-	includeMuteEdge *int32
-	includeCanDm *int32
-	includeCanMediaTag *int32
-	includeExtHasNftAvatar *int32
-	includeExtIsBlueVerified *int32
-	includeExtVerifiedType *int32
-	includeExtProfileImageShape *int32
-	skipStatus *int32
-	cursor *int32
-	userId *string
-	count *int32
-	withTotalCount *bool
+	includeBlocking                *int32
+	includeBlockedBy               *int32
+	includeFollowedBy              *int32
+	includeWantRetweets            *int32
+	includeMuteEdge                *int32
+	includeCanDm                   *int32
+	includeCanMediaTag             *int32
+	includeExtHasNftAvatar         *int32
+	includeExtIsBlueVerified       *int32
+	includeExtVerifiedType         *int32
+	includeExtProfileImageShape    *int32
+	skipStatus                     *int32
+	cursor                         *int32
+	userId                         *string
+	count                          *int32
+	withTotalCount                 *bool
 }
 
 func (r ApiGetFriendsFollowingListRequest) IncludeProfileInterstitialType(includeProfileInterstitialType int32) ApiGetFriendsFollowingListRequest {
@@ -139,22 +138,22 @@ GetFriendsFollowingList Method for GetFriendsFollowingList
 
 get friends following list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetFriendsFollowingListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetFriendsFollowingListRequest
 */
 func (a *V11GetAPIService) GetFriendsFollowingList(ctx context.Context) ApiGetFriendsFollowingListRequest {
 	return ApiGetFriendsFollowingListRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *V11GetAPIService) GetFriendsFollowingListExecute(r ApiGetFriendsFollowingListRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "V11GetAPIService.GetFriendsFollowingList")
@@ -534,14 +533,14 @@ func (a *V11GetAPIService) GetFriendsFollowingListExecute(r ApiGetFriendsFollowi
 }
 
 type ApiGetSearchTypeaheadRequest struct {
-	ctx context.Context
-	ApiService *V11GetAPIService
-	includeExtIsBlueVerified *int32
-	includeExtVerifiedType *int32
+	ctx                         context.Context
+	ApiService                  *V11GetAPIService
+	includeExtIsBlueVerified    *int32
+	includeExtVerifiedType      *int32
 	includeExtProfileImageShape *int32
-	q *string
-	src *string
-	resultType *string
+	q                           *string
+	src                         *string
+	resultType                  *string
 }
 
 func (r ApiGetSearchTypeaheadRequest) IncludeExtIsBlueVerified(includeExtIsBlueVerified int32) ApiGetSearchTypeaheadRequest {
@@ -583,22 +582,22 @@ GetSearchTypeahead Method for GetSearchTypeahead
 
 get search typeahead
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetSearchTypeaheadRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiGetSearchTypeaheadRequest
 */
 func (a *V11GetAPIService) GetSearchTypeahead(ctx context.Context) ApiGetSearchTypeaheadRequest {
 	return ApiGetSearchTypeaheadRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
 func (a *V11GetAPIService) GetSearchTypeaheadExecute(r ApiGetSearchTypeaheadRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "V11GetAPIService.GetSearchTypeahead")

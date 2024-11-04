@@ -13,13 +13,13 @@ package openapi
 
 import (
 	"encoding/json"
-	"gopkg.in/validator.v2"
 	"fmt"
+	"gopkg.in/validator.v2"
 )
 
 // GetHomeLatestTimeline200Response - struct for GetHomeLatestTimeline200Response
 type GetHomeLatestTimeline200Response struct {
-	Errors *Errors
+	Errors           *Errors
 	TimelineResponse *TimelineResponse
 }
 
@@ -36,7 +36,6 @@ func TimelineResponseAsGetHomeLatestTimeline200Response(v *TimelineResponse) Get
 		TimelineResponse: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *GetHomeLatestTimeline200Response) UnmarshalJSON(data []byte) error {
@@ -103,7 +102,7 @@ func (src GetHomeLatestTimeline200Response) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *GetHomeLatestTimeline200Response) GetActualInstance() (interface{}) {
+func (obj *GetHomeLatestTimeline200Response) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -154,5 +153,3 @@ func (v *NullableGetHomeLatestTimeline200Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

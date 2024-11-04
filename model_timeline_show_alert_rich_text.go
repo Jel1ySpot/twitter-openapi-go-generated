@@ -21,7 +21,7 @@ var _ MappedNullable = &TimelineShowAlertRichText{}
 // TimelineShowAlertRichText struct for TimelineShowAlertRichText
 type TimelineShowAlertRichText struct {
 	Entities []map[string]interface{} `json:"entities,omitempty"`
-	Text *string `json:"text,omitempty"`
+	Text     *string                  `json:"text,omitempty"`
 }
 
 // NewTimelineShowAlertRichText instantiates a new TimelineShowAlertRichText object
@@ -106,7 +106,7 @@ func (o *TimelineShowAlertRichText) SetText(v string) {
 }
 
 func (o TimelineShowAlertRichText) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableTimelineShowAlertRichText) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

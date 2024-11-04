@@ -12,8 +12,8 @@ Contact: yuki@yuki0311.com
 package openapi
 
 import (
-	"encoding/json"
 	"bytes"
+	"encoding/json"
 	"fmt"
 )
 
@@ -22,15 +22,15 @@ var _ MappedNullable = &TimelineTimelineModule{}
 
 // TimelineTimelineModule struct for TimelineTimelineModule
 type TimelineTimelineModule struct {
-	Typename TypeName `json:"__typename"`
+	Typename        TypeName               `json:"__typename"`
 	ClientEventInfo map[string]interface{} `json:"clientEventInfo"`
-	DisplayType DisplayType `json:"displayType"`
-	EntryType ContentEntryType `json:"entryType"`
-	FeedbackInfo *FeedbackInfo `json:"feedbackInfo,omitempty"`
-	Footer map[string]interface{} `json:"footer,omitempty"`
-	Header map[string]interface{} `json:"header,omitempty"`
-	Items []ModuleItem `json:"items,omitempty"`
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	DisplayType     DisplayType            `json:"displayType"`
+	EntryType       ContentEntryType       `json:"entryType"`
+	FeedbackInfo    *FeedbackInfo          `json:"feedbackInfo,omitempty"`
+	Footer          map[string]interface{} `json:"footer,omitempty"`
+	Header          map[string]interface{} `json:"header,omitempty"`
+	Items           []ModuleItem           `json:"items,omitempty"`
+	Metadata        map[string]interface{} `json:"metadata,omitempty"`
 }
 
 type _TimelineTimelineModule TimelineTimelineModule
@@ -313,7 +313,7 @@ func (o *TimelineTimelineModule) SetMetadata(v map[string]interface{}) {
 }
 
 func (o TimelineTimelineModule) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -360,10 +360,10 @@ func (o *TimelineTimelineModule) UnmarshalJSON(data []byte) (err error) {
 	err = json.Unmarshal(data, &allProperties)
 
 	if err != nil {
-		return err;
+		return err
 	}
 
-	for _, requiredProperty := range(requiredProperties) {
+	for _, requiredProperty := range requiredProperties {
 		if _, exists := allProperties[requiredProperty]; !exists {
 			return fmt.Errorf("no value given for required property %v", requiredProperty)
 		}
@@ -419,5 +419,3 @@ func (v *NullableTimelineTimelineModule) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

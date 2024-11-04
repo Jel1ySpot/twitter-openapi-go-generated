@@ -20,8 +20,8 @@ var _ MappedNullable = &ItemResult{}
 
 // ItemResult struct for ItemResult
 type ItemResult struct {
-	Typename *TypeName `json:"__typename,omitempty"`
-	Result *TweetUnion `json:"result,omitempty"`
+	Typename *TypeName   `json:"__typename,omitempty"`
+	Result   *TweetUnion `json:"result,omitempty"`
 }
 
 // NewItemResult instantiates a new ItemResult object
@@ -106,7 +106,7 @@ func (o *ItemResult) SetResult(v TweetUnion) {
 }
 
 func (o ItemResult) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -159,5 +159,3 @@ func (v *NullableItemResult) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

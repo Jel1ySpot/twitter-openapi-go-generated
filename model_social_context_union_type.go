@@ -22,7 +22,7 @@ type SocialContextUnionType string
 // List of SocialContextUnionType
 const (
 	TIMELINE_GENERAL_CONTEXT SocialContextUnionType = "TimelineGeneralContext"
-	TIMELINE_TOPIC_CONTEXT SocialContextUnionType = "TimelineTopicContext"
+	TIMELINE_TOPIC_CONTEXT   SocialContextUnionType = "TimelineTopicContext"
 )
 
 // All allowed values of SocialContextUnionType enum
@@ -109,4 +109,3 @@ func (v *NullableSocialContextUnionType) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
